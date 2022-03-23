@@ -1,6 +1,6 @@
 @main def hello: Unit = 
   println("Hello world!")
-  println(blackCell())
+  println(msg)
 
 
 var eol = sys.props("line.separator")
@@ -13,5 +13,5 @@ def blackCell() = (for (i <- 0 to 10){
   }
 })
 
+val msg = (row() + cells()) * 10 + row()
 
-//def msg(width: Int = 10, height: Int = 10) = (row(3,width) + cells(width,"O")) * height + row(3,width)
