@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/Main.scala:13:4 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m13 |[0m    str = str + cells([31m1[0m,[31m"X"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |    [31m^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |    Not found: str[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/Main.scala:13:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m13 |[0m    str = str + cells([31m1[0m,[31m"X"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |          [31m^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |          Not found: str[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
