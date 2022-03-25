@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(959933da-0744-4908-9f64-d38cc776ce19), Some(CommandSource(console0)))[0m
-[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
-[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/sebastiankaeser/Desktop/Softwarengineering/dame/target/scala-3.1.1/classes ...[0m
-[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed 23.03.2022, 17:22:11[0m
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
