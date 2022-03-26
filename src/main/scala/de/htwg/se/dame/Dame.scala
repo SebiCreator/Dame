@@ -4,83 +4,59 @@
   println("\t Hello world!")
   println("\t Dame v0.1")
 
-  println(singleField())
-  println(smallBoard())
-  println(classicBoard())
-  println(internationalBoard())
+  // cellwith muss ungerade sein
+  // nFields muss gerade sein 
 
-  println(coloredBoard())
+  println(fullBoard2Wrapped(7,10,"X"))
+
+
+
+  //println(halfFloor(5))
+
+
 
 var eol = sys.props("line.separator")
 // current row and cell types
-def singleRow(size: Int = 3) = ("+" + "-" *size) + "+" + eol
-def singleCell(size: Int = 3, sign: String = "O") = ("|" + " " + sign + " " + "|") + eol
-def singleField(size: Int = 3) = singleRow(size) + singleCell(size) + singleRow(size)
-def middleCell(size: Int = 3, sign: String = "F") = (" " + sign + " ") + eol
-def multiRow(size: Int = 3, len: Int = 10) = ("+" + "-" * size) *len + "+" + eol
-def multiCells(len: Int = 10, fig: String = " ")  = ("|" + " " + fig + " ") * len +  "|" + eol
 
 
 
-// supported BoardSizes
-def customBoard(size: Int = 10) = ( multiRow(3,size) +  multiCells(size) ) * size  + multiRow(3,size) + eol
-def classicBoard(size: Int = 8) = customBoard(size) 
-def internationalBoard(size: Int = 10) = customBoard(size)
-// For Testing only
-def smallBoard(size: Int = 6) = customBoard(size)
 
-def isEven(number: Int) = number % 2 == 0
-def isOdd(number: Int) = !isEven(number) 
 
-def coloredBoard(length: Int = 10, width: Int = 3, player1: String = "X" , player2: String = "O") = 
-  def half(in: Int) = in/2
-  def third(in: Int) = in /3
-  def pad(in: Int) = in +2
+// Lines & Cells
+def bLine(cellsize: Int, nfields: Int) = "|" + (("#" * cellsize) + (" " * cellsize))*halfFloor(nfields) + "|" + eol
+def wLine(cellsize: Int, nfields: Int) = "|" + ((" " * cellsize) + ("#" * cellsize))*halfFloor(nfields) + "|" + eol
+def innerWCell(cellsize: Int,symbol: String) = " " * (cellsize/2).toInt + symbol + " " * (cellsize/2).toInt
+def innerBCell(cellsize: Int,symbol: String) = "#" * ((cellsize/2).toInt) + symbol + "#" * ((cellsize/2).toInt) 
 
-  def scale(wid: Int) = 
-    if (isEven(wid)) {
-      wid + 1
-    }
 
-  def evenRow() = "|" + ( ( ("#" * width) + (" " * width) ) * (half(length))) + "|"
-  def evenRowWithPlayer(player: String) = "|" + ( ( ("#" * math.ceil((width*1/3)).toInt + player + ("#" * math.ceil(width*1/3).toInt )) + (" " * width) ) * (half(length))) + "|"
-  def oddRow() = "|" + ( ( (" " * width) + ("#" * width) ) * (half(length))) + "|"
-  def oddRowWithPlayer(player: String) = "|" + ( ( (" " * width) + ("#" + player1 + "#") ) * (half(length))) + "|"
+// Lines & Blocks with symbols
+def halfFloor(num: Int) = (num/2).toInt  
+def bLineFull(cellsize: Int, nFields: Int, symbol: String) = "|" + (innerBCell(cellsize,symbol) + innerWCell(cellsize,symbol)) * halfFloor(nFields) + "|" +  eol 
+def wLineFull(cellsize: Int, nFields: Int, symbol: String) = "|" + (innerWCell(cellsize,symbol) + innerBCell(cellsize,symbol)) * halfFloor(nFields) + "|" + eol 
 
-  println("_" * pad(length * width))
-  for (n <- List.range(0,length)) {
-    if (isEven(n)) {
-      if(n <= 3) {
-        println( evenRow() )
-        println( evenRowWithPlayer(player1) )
-        println( evenRow() )
-      } else if (n >= 6) {
-        println( evenRow() )
-        println( evenRowWithPlayer(player2) )
-        println( evenRow() )
-      } else {
-        println( evenRow() )
-        println( evenRow() )
-        println( evenRow() )
-      }
-    }
-    if (isOdd(n)) {
-      if(n <= 3) {
-        println( oddRow() )
-        println( oddRowWithPlayer(player1) )
-        println( oddRow() )
-      } else if (n >= 6) {
-        println( oddRow() )
-        println( oddRowWithPlayer(player2) )
-        println( oddRow() )
-      } else {
-        println( oddRow() )
-        println( oddRow() )
-        println( oddRow() )
-      }
-    }
-  }
-  println("-" * pad(length * width))
+def bBlockFull(cellsize: Int, nFields: Int, symbol: String) = (bLine(cellsize,nFields) * (cellsize/2).toInt) +  bLineFull(cellsize,nFields,symbol) + (bLine(cellsize,nFields) * (cellsize/2).toInt)
+def wBlockFull(cellsize: Int, nFields: Int, symbol: String) = (wLine(cellsize,nFields) * (cellsize/2).toInt) +  wLineFull(cellsize,nFields,symbol) + (wLine(cellsize,nFields) * (cellsize/2).toInt)
+
+
+// Helper
+def calcTotalWidth(cellsize: Int, nFields: Int) = (cellsize * nFields) + 2
+
+
+// Limits
+def upperLimit(cellsize: Int, nFields: Int) = "_" * calcTotalWidth(cellsize,nFields) + eol
+def lowerLimit(cellsize: Int, nFields: Int) = "-" * calcTotalWidth(cellsize,nFields) + eol
+def limitWrap(cellsize: Int, nFields: Int, content: String) = upperLimit(cellsize,nFields) + content + lowerLimit(cellsize,nFields)
+
+
+// Board
+def emptyBoard(cellsize: Int,nfields: Int) = (bLine(cellsize,nfields)*cellsize + wLine(cellsize,nfields)*cellsize) * nfields
+def fullBoard1(cellsize: Int,nfields: Int) = (bLineFull(cellsize,nfields,"X")*cellsize + wLineFull(cellsize,nfields,"X")*cellsize) * nfields
+
+def fullBoard2(cellsize: Int, nFields: Int, symbol: String) = (bBlockFull(cellsize,nFields,symbol)+ wBlockFull(cellsize,nFields,symbol)) * (nFields/2)
+
+def fullBoard2Wrapped(cellsize: Int, nFields: Int, symbol: String) = limitWrap(cellsize,nFields,fullBoard2(cellsize,nFields,"X"))
+
+
+
   
-val msg = (multiRow() + multiCells()) * 10 + multiRow()
 

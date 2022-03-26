@@ -1,6 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:16:15 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m16 |[0m[33mval[0m [36mmsg[0m = (row + cells) * [31m10[0m + eol +col[0m
-[0m[[0m[31merror[0m] [0m[0m   |           [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |           value + is not a member of (Int, Int) => String[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:10:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m10 |[0m  println(fullBoardW([31m7[0m,[31m6[0m,[31m"X"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m   |          [31m^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |          Not found: fullBoardW[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
