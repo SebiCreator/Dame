@@ -784,3 +784,36 @@ Exception in thread "pool-1-thread-34" java.lang.InterruptedException
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+2022.03.26 11:49:32 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:49:36 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:49:39 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:49:40 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:49:42 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:31 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:33 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:35 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:36 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:38 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:39 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:46 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:53:53 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:54:05 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:54:42 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:54:57 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:55:00 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:55:04 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:55:08 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:56:41 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:56:53 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:21 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:24 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:28 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:30 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:50 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:54 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:57:56 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:58:21 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:58:30 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:58:32 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:59:00 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 11:59:02 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m

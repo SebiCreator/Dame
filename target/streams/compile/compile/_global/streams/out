@@ -1,6 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:10:10 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m10 |[0m  println(fullBoardW([31m7[0m,[31m6[0m,[31m"X"[0m))[0m
-[0m[[0m[31merror[0m] [0m[0m   |          [31m^^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |          Not found: fullBoardW[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E103] Syntax Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:17:0 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m17 |[0mdd[0m
+[0m[[0m[31merror[0m] [0m[0m   |[31m^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |Illegal start of toplevel definition[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
