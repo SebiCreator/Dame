@@ -1,6 +1,18 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E103] Syntax Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:17:0 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m17 |[0mdd[0m
-[0m[[0m[31merror[0m] [0m[0m   |[31m^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |Illegal start of toplevel definition[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:38:79 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m38 |[0m[33mdef[0m [36mfullBoardWrapped2[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                                               [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:38:117 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m38 |[0m[33mdef[0m [36mfullBoardWrapped2[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                                                                                     [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:36:78 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m36 |[0m[33mdef[0m [36mfullBoardWrapped[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                                              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:36:116 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m36 |[0m[33mdef[0m [36mfullBoardWrapped[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                                                                                    [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

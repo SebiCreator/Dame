@@ -2,10 +2,8 @@
   println("\t Hello world!")
   println("\t Dame v0.1")
 
-  // cellwith muss ungerade sein
-  // nFields muss gerade sein 
 
-  println(fullBoard2Wrapped(3,2,"X"))
+  println(fullBoardWrapped2(4,4,"X"))
 
 var eol = sys.props("line.separator")
 
@@ -24,6 +22,7 @@ def wBlockFull(cellsize: Int, nFields: Int, symbol: String) = (wLine(cellsize,nF
 
 // Helper
 def calcTotalWidth(cellsize: Int, nFields: Int) = (cellsize * nFields) + 2
+def makeodd(number: Int) = (number*2) + 1
 
 // Limits
 def upperLimit(cellsize: Int, nFields: Int) = "_" * calcTotalWidth(cellsize,nFields) + eol
@@ -32,9 +31,12 @@ def limitWrap(cellsize: Int, nFields: Int, content: String) = upperLimit(cellsiz
 
 // Board
 def emptyBoard(cellsize: Int,nfields: Int) = (bLine(cellsize,nfields)*cellsize + wLine(cellsize,nfields)*cellsize) * nfields
-def fullBoard1(cellsize: Int,nfields: Int) = (bLineFull(cellsize,nfields,"X")*cellsize + wLineFull(cellsize,nfields,"X")*cellsize) * nfields
-def fullBoard2(cellsize: Int, nFields: Int, symbol: String) = (bBlockFull(cellsize,nFields,symbol)+ wBlockFull(cellsize,nFields,symbol)) * (nFields/2)
-def fullBoard2Wrapped(cellsize: Int, nFields: Int, symbol: String) = limitWrap(cellsize,nFields,fullBoard2(cellsize,nFields,"X"))
+def fullBoard(cellsize: Int, nFields: Int, symbol: String) = (bBlockFull(cellsize,nFields,symbol)+ wBlockFull(cellsize,nFields,symbol)) * (nFields/2)
+
+// nFields muss gerade sein , cellwith muss ungerade sein
+def fullBoardWrapped(cellsize: Int, nFields: Int, symbol: String) = limitWrap(makeodd(cellsize),nFields*2,fullBoard(makeodd(cellsize),nFields*2,"X"))
+// alle Argumente möglich
+def fullBoardWrapped2(cellsize: Int, nFields: Int, symbol: String) = limitWrap(makeodd(cellsize),nFields*2,fullBoard(makeodd(cellsize),nFields*2,"X"))
 
 
 

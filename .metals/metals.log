@@ -817,3 +817,232 @@ Exception in thread "pool-1-thread-34" java.lang.InterruptedException
 2022.03.26 11:58:32 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
 2022.03.26 11:59:00 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
 2022.03.26 11:59:02 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:05 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:08 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:12 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:15 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:17 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:48 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:52 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:57 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:04:59 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:04 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:06 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:08 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:09 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:13 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:20 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:23 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:26 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:28 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:35 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:38 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:44 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:05:46 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:00 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:16 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:17 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:22 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:25 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:29 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:34 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:37 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:42 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:44 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:06:51 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:01 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:05 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:08 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:29 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:31 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:40 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:54 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:07:56 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:02 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+März 26, 2022 12:08:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+java.util.concurrent.CompletionException: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.checkNoLetter(LegacyScanner.scala:946)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:988)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:996)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.acceptBalancedDelimeters(ScalaToplevelMtags.scala:274)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:188)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:50)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:40)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:96)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:232)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$3(DefinitionProvider.scala:193)
+	at scala.Option.orElse(Option.scala:447)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:193)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:188)
+	at scala.meta.internal.metals.DocumentHighlightProvider.$anonfun$documentHighlight$1(DocumentHighlightProvider.scala:33)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.metals.DocumentHighlightProvider.documentHighlight(DocumentHighlightProvider.scala:29)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$documentHighlights$1(MetalsLanguageServer.scala:1451)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+
+März 26, 2022 12:08:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+java.util.concurrent.CompletionException: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.checkNoLetter(LegacyScanner.scala:946)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:988)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:996)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.acceptBalancedDelimeters(ScalaToplevelMtags.scala:274)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:188)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:50)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:40)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:96)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:232)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$3(DefinitionProvider.scala:193)
+	at scala.Option.orElse(Option.scala:447)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:193)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:188)
+	at scala.meta.internal.metals.DocumentHighlightProvider.$anonfun$documentHighlight$1(DocumentHighlightProvider.scala:33)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.metals.DocumentHighlightProvider.documentHighlight(DocumentHighlightProvider.scala:29)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$documentHighlights$1(MetalsLanguageServer.scala:1451)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+
+März 26, 2022 12:08:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+java.util.concurrent.CompletionException: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: file:///Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:8: error: Invalid literal number
+  println(fullBoardWrapped2(3k,1,"X"))
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.checkNoLetter(LegacyScanner.scala:946)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:988)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:996)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.acceptBalancedDelimeters(ScalaToplevelMtags.scala:274)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:188)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:50)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:40)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:96)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:232)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$3(DefinitionProvider.scala:193)
+	at scala.Option.orElse(Option.scala:447)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:193)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:188)
+	at scala.meta.internal.metals.DocumentHighlightProvider.$anonfun$documentHighlight$1(DocumentHighlightProvider.scala:33)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.metals.DocumentHighlightProvider.documentHighlight(DocumentHighlightProvider.scala:29)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$documentHighlights$1(MetalsLanguageServer.scala:1451)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+
+2022.03.26 12:08:03 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:08 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:15 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:18 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:22 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:29 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:33 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:36 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:08:41 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:09:08 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:09:15 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:09:30 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
+2022.03.26 12:09:38 WARN  no build target for: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala[0m
