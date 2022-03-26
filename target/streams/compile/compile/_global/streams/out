@@ -1,18 +1,11 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:38:79 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m38 |[0m[33mdef[0m [36mfullBoardWrapped2[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                                               [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:38:117 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m38 |[0m[33mdef[0m [36mfullBoardWrapped2[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                                                                                     [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:36:78 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m36 |[0m[33mdef[0m [36mfullBoardWrapped[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                                              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:36:116 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m36 |[0m[33mdef[0m [36mfullBoardWrapped[0m([36mcellsize[0m: [35mInt[0m, [36mnFields[0m: [35mInt[0m, [36msymbol[0m: [35mString[0m) = limitWrap(makeodd(cellsize),nFields*[31m2[0m,fullBoard(makeodd(cellsize),nFields*[31m2[0m,[31m"X"[0m))[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                                                                                    [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                                                      Not found: makeodd[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E018] Syntax Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:2:30 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2 |[0m  println(fullBoardWrapped2([31m0[0m,,[31m"O"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m  |                              [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m  |                              expression expected but [31m','[0m found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E007] Type Mismatch Error: /Users/sebastiankaeser/Desktop/Softwarengineering/dame/src/main/scala/de/htwg/se/dame/Dame.scala:2:29 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2 |[0m  println(fullBoardWrapped2([31m0[0m,,[31m"O"[0m))[0m
+[0m[[0m[31merror[0m] [0m[0m  |                             [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m  |                             Found:    Null[0m
+[0m[[0m[31merror[0m] [0m[0m  |                             Required: Int[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

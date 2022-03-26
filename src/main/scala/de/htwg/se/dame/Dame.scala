@@ -1,9 +1,5 @@
 @main def hello: Unit = 
-  println("\t Hello world!")
-  println("\t Dame v0.1")
-
-
-  println(fullBoardWrapped2(4,4,"X"))
+  println(fullBoardWrapped2(1,1,"O"))
 
 var eol = sys.props("line.separator")
 
@@ -34,9 +30,9 @@ def emptyBoard(cellsize: Int,nfields: Int) = (bLine(cellsize,nfields)*cellsize +
 def fullBoard(cellsize: Int, nFields: Int, symbol: String) = (bBlockFull(cellsize,nFields,symbol)+ wBlockFull(cellsize,nFields,symbol)) * (nFields/2)
 
 // nFields muss gerade sein , cellwith muss ungerade sein
-def fullBoardWrapped(cellsize: Int, nFields: Int, symbol: String) = limitWrap(makeodd(cellsize),nFields*2,fullBoard(makeodd(cellsize),nFields*2,"X"))
-// alle Argumente möglich
-def fullBoardWrapped2(cellsize: Int, nFields: Int, symbol: String) = limitWrap(makeodd(cellsize),nFields*2,fullBoard(makeodd(cellsize),nFields*2,"X"))
+def fullBoardWrapped(cellsize: Int, nFields: Int, symbol: String) = limitWrap(makeodd(cellsize),nFields*2,fullBoard(makeodd(cellsize),nFields*2,symbol))
+// alle Argumente möglich ( cellsize:  wieviel pix um symbol, nFields Anzahl der Doppelfelder)
+def fullBoardWrapped2(cellsize: Int, nFields: Int, symbol: String) = limitWrap(makeodd(cellsize),nFields*2,fullBoard(makeodd(cellsize),nFields*2,symbol))
 
 
 
