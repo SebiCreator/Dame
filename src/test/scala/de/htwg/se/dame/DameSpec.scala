@@ -7,8 +7,8 @@ class Dame extends AnyWordSpec {
       "a wLine as String of form '|   |' \n" +
       "an innerWCell as String in form '   ' \n" +
       "an innerBCell as String in form '###' " in {
-        bline(3, 1)
-        wline(3, 1)
+        bLine(3, 1)
+        wLine(3, 1)
         innerWCell(3, "0")
         innerBCell(3, "X")
       }
