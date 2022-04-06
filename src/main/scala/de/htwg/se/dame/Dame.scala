@@ -1,3 +1,5 @@
+package de.htwg.se.dame
+
 @main def hello: Unit = 
   val l1 = List(("A","B"),("C","D"),("E","F"),("G","H"))
   val l2 = List(("X","X"),("X","X"),("X","X"),("X","X"))
