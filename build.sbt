@@ -1,14 +1,9 @@
 val scala3Version = "3.1.1"
 
-lazy val root = project
-  .in(file("."))
-  .settings(
-    name := "Dame",
-    version := "0.1.0-SNAPSHOT",
+name := "Dame in Scala"
+organization := "de.htwg.se"
+version := "0.1.0"
+scalaVersion := scala3Version
 
-    scalaVersion := scala3Version,
-
-    libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test
-    libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.11"
-    libraryDependencies += "org.scalactic" %% "scalatest" % "3.2.11" % Test
-  )
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.11"
+libraryDependencies += "org.scalactic" %% "scalatest" % "3.2.11" % "test"
