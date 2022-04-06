@@ -6,6 +6,7 @@ lazy val root = project
     name := "Dame",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := scala3Version,
-    libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5",
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+    libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.11",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
   )
+
