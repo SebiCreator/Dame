@@ -4,7 +4,7 @@ import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers._
 
 class PlayerSpec extends AnyWordSpec {
-  "A Player" when {
+  formatHead("A Player") when {
     "new" should {
       val player = Player("John Doe")
       "have a name" in {
