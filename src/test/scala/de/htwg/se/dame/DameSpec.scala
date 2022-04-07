@@ -23,10 +23,18 @@ class Dame extends AnyWordSpec {
   formatHead(" Lines & Blocks with symbols ") should {
     '\n' +
       formatText("return in halffloor an Integer divided by to 2") +
-      formatText("bLineFull returns a String of a full Black Line '|#X#| * nFields'") +
-      formatText("wLineFull returns a String of a full White Line '| O | * nFields'") +
-      formatText("bBlockFull returns a String of a full Black Block (y-axis) '|#X#| *nFields * cellsize'") +
-      formatText("wBlockFull returns a String of a full White Block (y-axis) '| O | *nFields * cellsize'") in {
+      formatText(
+        "bLineFull returns a String of a full Black Line '|#X#| * nFields'"
+      ) +
+      formatText(
+        "wLineFull returns a String of a full White Line '| O | * nFields'"
+      ) +
+      formatText(
+        "bBlockFull returns a String of a full Black Block (y-axis) '|#X#| *nFields * cellsize'"
+      ) +
+      formatText(
+        "wBlockFull returns a String of a full White Block (y-axis) '| O | *nFields * cellsize'"
+      ) in {
         halfFloor(4)
         bLineFull(3, 3, "X")
         wLineFull(3, 3, "O")
@@ -36,29 +44,45 @@ class Dame extends AnyWordSpec {
   }
   formatHead("Helper functions") should {
     '\n' +
-      formatText("calcTotalWidth returns cellSize * nFields to calculate the full boardSize") +
-      formatText("makeodd always returns an uneven Integer  '(number * 2) + 1' ") in {
+      formatText(
+        "calcTotalWidth returns cellSize * nFields to calculate the full boardSize"
+      ) +
+      formatText(
+        "makeodd always returns an uneven Integer  '(number * 2) + 1' "
+      ) in {
         calcTotalWidth(3, 3)
         makeodd(5)
       }
   }
   formatHead("Limit helper functions") should {
     '\n' +
-      formatText("upperLimit returns a String to draw the upper GameBoard line") +
-      formatText("lowerLimit returns a String to draw the lower GameBoard line") +
-      formatText("limitWrap returns a GameBoard as String with upper and lower lines") in {
+      formatText(
+        "upperLimit returns a String to draw the upper GameBoard line"
+      ) +
+      formatText(
+        "lowerLimit returns a String to draw the lower GameBoard line"
+      ) +
+      formatText(
+        "limitWrap returns a GameBoard as String with upper and lower lines"
+      ) in {
         upperLimit(3, 3)
         lowerLimit(3, 3)
-        limitWrap(3, 3, emptyBoard(3,3))
-        limitWrap(3, 3, fullBoard(3,3,"X"))
+        limitWrap(3, 3, emptyBoard(3, 3))
+        limitWrap(3, 3, fullBoard(3, 3, "X"))
       }
   }
   formatHead("Board functions") should {
     '\n' +
       formatText("emptyBoard returns the Gameboard as String without players") +
-      formatText("fullBoard returns the Gameboard as String with playerPositions") +
-      formatText("fullBoardWrapped returns the fullGameboard as String without players and upper, lower Bounds") +
-      formatText("fullBoardWrapped2 returns the fullGameboard as String without players and upper, lower Bounds") in {
+      formatText(
+        "fullBoard returns the Gameboard as String with playerPositions"
+      ) +
+      formatText(
+        "fullBoardWrapped returns the fullGameboard as String without players and upper, lower Bounds"
+      ) +
+      formatText(
+        "fullBoardWrapped2 returns the fullGameboard as String without players and upper, lower Bounds"
+      ) in {
         emptyBoard(3, 3)
         fullBoard(3, 3, "X")
         fullBoardWrapped(3, 6, "O")
