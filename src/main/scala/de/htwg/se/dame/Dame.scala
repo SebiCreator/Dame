@@ -1,4 +1,5 @@
 package de.htwg.se.dame
+import de.htwg.se.tui.Tui
 
 @main def hello: Unit = 
   val l1 = List(("A","B"),("C","D"),("E","F"),("G","H"))
@@ -17,11 +18,23 @@ package de.htwg.se.dame
   val l12 = List(("A","B"),("C","D"),("E","F"),("G","H"),("A","B"),("C","D"),("E","F"),("G","H"))
   val e2 = List(l5,l6,l7,l8,l9,l10,l11,l12)
 
+  welcomeMessage()
+  Tui().processInputLine("help")
+  Tui().processInputLine("custom")
   //println(modLine(4,l))
   //println(modBlock(3,2,l1))
   //println(modBoardWrapped(5,4,e1))
   println(modBoardWrapped(5,8,e2))
   //println(bBlockFull(3,2,"X"))
+
+def welcomeMessage() =
+ println("     __          __  _                            _          _____                                  ")
+ println("     \\ \\        / / | |                          | |        |  __ \\                              ")
+ println("      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___         ")
+ println("       \\ \\/  \\/ / _ | |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | |  | |/ _` | '_ ` _ \\ / _ \\  ")
+ println("        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/         ")
+ println("         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| ")
+ println("                                                                                                    ")
 
 
 var eol = sys.props("line.separator")
