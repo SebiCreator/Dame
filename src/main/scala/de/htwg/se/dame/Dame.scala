@@ -21,6 +21,22 @@ import de.htwg.se.tui.Tui
   welcomeMessage()
   Tui().processInputLine("help")
   Tui().processInputLine("custom")
+  println(" 6 x 6")
+  val x = Matrix[String](List())
+  val a = x.initFill("#")
+
+  println(" 8 x 8")
+  val y = Matrix[String](List(), 8)
+  val b = y.initFill("#")
+
+  println(" 10 x 10 ")
+  val z = Matrix[String](List(), 10)
+  z.initFill("#")
+  println(a.tupilization())
+  // println(b.tupilization())
+
+  val test = b.tupilization()
+  println(modBoard(0, 3, test))
   //println(modLine(4,l))
   //println(modBlock(3,2,l1))
   //println(modBoardWrapped(5,4,e1))
