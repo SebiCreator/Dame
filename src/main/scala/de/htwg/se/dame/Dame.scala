@@ -2,46 +2,9 @@ package de.htwg.se.dame
 import de.htwg.se.tui.Tui
 
 @main def hello: Unit = 
-  val l1 = List(("A","B"),("C","D"),("E","F"),("G","H"))
-  val l2 = List(("X","X"),("X","X"),("X","X"),("X","X"))
-  val l3 = List(("X","X"),("X","X"),("X","X"),("X","X"))
-  val l4 = List(("H","G"),("F","E"),("D","C"),("B","A"))
-  val e1 = List(l1,l2,l3,l4)
+  val m = Matrix(Nil).initFill()
+  m.tup()
 
-  val l5 = List(("A","B"),("C","D"),("E","F"),("G","H"),("A","B"),("C","D"),("E","F"),("G","H"))
-  val l6 = List(("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"))
-  val l7 = List(("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"))
-  val l8 = List(("H","G"),("F","E"),("D","C"),("B","A"),("H","G"),("F","E"),("D","C"),("B","A"))
-  val l9 = List(("H","G"),("F","E"),("D","C"),("B","A"),("H","G"),("F","E"),("D","C"),("B","A"))
-  val l10 = List(("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"))
-  val l11 = List(("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"),("X","X"))
-  val l12 = List(("A","B"),("C","D"),("E","F"),("G","H"),("A","B"),("C","D"),("E","F"),("G","H"))
-  val e2 = List(l5,l6,l7,l8,l9,l10,l11,l12)
-
-  welcomeMessage()
-  Tui().processInputLine("help")
-  Tui().processInputLine("custom")
-  println(" 6 x 6")
-  val x = Matrix[String](List())
-  val a = x.initFill("#")
-
-  println(" 8 x 8")
-  val y = Matrix[String](List(), 8)
-  val b = y.initFill("#")
-
-  println(" 10 x 10 ")
-  val z = Matrix[String](List(), 10)
-  z.initFill("#")
-  println(a.tupilization())
-  // println(b.tupilization())
-
-  val test = b.tupilization()
-  println(modBoard(0, 3, test))
-  //println(modLine(4,l))
-  //println(modBlock(3,2,l1))
-  //println(modBoardWrapped(5,4,e1))
-  println(modBoardWrapped(5,8,e2))
-  //println(bBlockFull(3,2,"X"))
 
 def welcomeMessage() =
  println("     __          __  _                            _          _____                                  ")
@@ -92,7 +55,6 @@ def autoBoard(size: Int, symbol: String) = limitWrap(makeodd(size),size*2,fullBo
 
 
 //Modified
-//def to2Tuple(entrys: List[String]) = entrys.map()
 def modLine(cellsize: Int, symbols: List[(String,String)]) = "|" + symbols.map((a,b) => innerBCell(cellsize,a) + innerWCell(cellsize,b)).mkString("") + "|" + eol
 def modBlock(cellsize: Int, nFields: Int, symbols: List[(String,String)]) = (bLine(cellsize,nFields*4) * (cellsize/2).toInt) +  modLine(cellsize,symbols) + (bLine(cellsize,nFields*4) * (cellsize/2).toInt)
 def modBoard(cellsize: Int, nFields: Int, symbols: List[List[(String,String)]]) = symbols.map(l => modBlock(cellsize,nFields/2,l)).mkString("")
