@@ -2,9 +2,8 @@ package de.htwg.se.dame
 import de.htwg.se.tui.Tui
 
 @main def hello: Unit = 
-  val m = Matrix(Nil).initFill()
-  m.tup()
-
+  val default= new Matrix[String]().initFill()
+  println(default.data(1))
 
 def welcomeMessage() =
  println("     __          __  _                            _          _____                                  ")
@@ -59,6 +58,3 @@ def modLine(cellsize: Int, symbols: List[(String,String)]) = "|" + symbols.map((
 def modBlock(cellsize: Int, nFields: Int, symbols: List[(String,String)]) = (bLine(cellsize,nFields*4) * (cellsize/2).toInt) +  modLine(cellsize,symbols) + (bLine(cellsize,nFields*4) * (cellsize/2).toInt)
 def modBoard(cellsize: Int, nFields: Int, symbols: List[List[(String,String)]]) = symbols.map(l => modBlock(cellsize,nFields/2,l)).mkString("")
 def modBoardWrapped(cellsize: Int, nFields: Int,symbols: List[List[(String,String)]]) = limitWrap(cellsize*2,nFields,modBoard(cellsize,nFields,symbols))
-
-  
-
