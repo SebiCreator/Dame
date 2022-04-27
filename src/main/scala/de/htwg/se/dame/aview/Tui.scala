@@ -1,9 +1,35 @@
-package de.htwg.se.dame.tui
+package de.htwg.se.dame.aview
 
 import scala.io.StdIn.readLine
-import de.htwg.se.dame
+import de.htwg.se.dame.controller.Controller
+import de.htwg.se.dame.util.Observer
+import de.htwg.se.dame.model.Lines.fullBoardWrapped2
 
-class Tui {
+class Tui(controller: Controller) extends Observer {
+  controller.add(this)
+
+  def welcomeMessage() =
+    println(
+      "     __          __  _                            _          _____                        "
+    )
+  println(
+    "     \\ \\        / / | |                          | |        |  __ \\                       "
+  )
+  println(
+    "      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___  "
+  )
+  println(
+    "       \\ \\/  \\/ / _ | |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | |  | |/ _` | '_ ` _ \\ / _ \\ "
+  )
+  println(
+    "        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/ "
+  )
+  println(
+    "         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| "
+  )
+  println(
+    "                                                                                          "
+  )
 
   def hMessageFormat(keyword: String, message: String) =
     "\n%2$s %1$s %2$s \t%3$s".format(keyword, "  ", message)
@@ -27,7 +53,7 @@ class Tui {
 
       case "new" =>
         println("Starting a new game ...")
-        println(dame.fullBoardWrapped2(3, 8, " "))
+        println(fullBoardWrapped2(3, 8, " "))
         return 0
 
       case "custom" => /* new Board with user sizes*/
@@ -38,7 +64,7 @@ class Tui {
         var nFields = readLine().toInt
 
         println("Starting a new game ...")
-        println(dame.fullBoardWrapped2(cellsize, nFields, " "))
+        println(fullBoardWrapped2(cellsize, nFields, " "))
         return 1
 
       case "load" => /* load a savegame */
@@ -54,4 +80,6 @@ class Tui {
         return 4
     }
   }
+
+  override def update: Unit = println(controller.fullBoardWrapped2())
 }
