@@ -8,28 +8,14 @@ import de.htwg.se.dame.model.Lines.fullBoardWrapped2
 class Tui(controller: Controller) extends Observer {
   controller.add(this)
 
-  def welcomeMessage() =
-    println(
-      "     __          __  _                            _          _____                        "
-    )
-  println(
-    "     \\ \\        / / | |                          | |        |  __ \\                       "
-  )
-  println(
-    "      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___  "
-  )
-  println(
-    "       \\ \\/  \\/ / _ | |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | |  | |/ _` | '_ ` _ \\ / _ \\ "
-  )
-  println(
-    "        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/ "
-  )
-  println(
-    "         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| "
-  )
-  println(
-    "                                                                                          "
-  )
+def welcomeMessage() =
+ println("     __          __  _                            _          _____                                  ")
+ println("     \\ \\        / / | |                          | |        |  __ \\                              ")
+ println("      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___         ")
+ println("       \\ \\/  \\/ / _ | |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | |  | |/ _` | '_ ` _ \\ / _ \\  ")
+ println("        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/         ")
+ println("         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| ")
+ println("                                                                                                    ")
 
   def hMessageFormat(keyword: String, message: String) =
     "\n%2$s %1$s %2$s \t%3$s".format(keyword, "  ", message)
