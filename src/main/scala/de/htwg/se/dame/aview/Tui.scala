@@ -8,7 +8,7 @@ import de.htwg.se.dame.model.Lines.fullBoardWrapped2
 class Tui(controller: Controller) extends Observer {
   controller.add(this)
 
-def welcomeMessage() =
+  def welcomeMessage() =
  println("     __          __  _                            _          _____                                  ")
  println("     \\ \\        / / | |                          | |        |  __ \\                              ")
  println("      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___         ")
@@ -67,5 +67,7 @@ def welcomeMessage() =
     }
   }
 
-  override def update: Unit = println(controller.fullBoardWrapped2())
+  override def update: Unit = println(
+    controller.fullBoardWrapped2(3, 4, " ")
+  )
 }
