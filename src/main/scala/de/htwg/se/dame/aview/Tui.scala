@@ -3,10 +3,12 @@ package de.htwg.se.dame.aview
 import scala.io.StdIn.readLine
 import de.htwg.se.dame.controller.Controller
 import de.htwg.se.dame.util.Observer
-import de.htwg.se.dame.model.Lines.fullBoardWrapped2
 
-class Tui(controller: Controller) extends Observer {
+class Tui(var controller: Controller) extends Observer {
   controller.add(this)
+
+  override def update: Unit =
+    print(controller.field)
 
   def welcomeMessage() =
  println("     __          __  _                            _          _____                                  ")
@@ -16,6 +18,7 @@ class Tui(controller: Controller) extends Observer {
  println("        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/         ")
  println("         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| ")
  println("                                                                                                    ")
+
 
   def hMessageFormat(keyword: String, message: String) =
     "\n%2$s %1$s %2$s \t%3$s".format(keyword, "  ", message)
@@ -39,7 +42,8 @@ class Tui(controller: Controller) extends Observer {
 
       case "new" =>
         println("Starting a new game ...")
-        println(fullBoardWrapped2(3, 8, " "))
+        controller.startGame(3, 8)
+
         return 0
 
       case "custom" => /* new Board with user sizes*/
@@ -50,7 +54,7 @@ class Tui(controller: Controller) extends Observer {
         var nFields = readLine().toInt
 
         println("Starting a new game ...")
-        println(fullBoardWrapped2(cellsize, nFields, " "))
+        controller.startGame(cellsize, nFields)
         return 1
 
       case "load" => /* load a savegame */
@@ -67,7 +71,4 @@ class Tui(controller: Controller) extends Observer {
     }
   }
 
-  override def update: Unit = println(
-    controller.fullBoardWrapped2(3, 4, " ")
-  )
 }
