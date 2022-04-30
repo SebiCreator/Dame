@@ -1,3 +1,7 @@
+[![Build Status](https://app.travis-ci.com/SebiCreator/Dame.svg?branch=main)](https://app.travis-ci.com/SebiCreator/Dame)
+
+
+
 ## sbt project compiled with Scala 3
 
 ### Usage
