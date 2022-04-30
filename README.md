@@ -1,5 +1,5 @@
 [![Build Status](https://app.travis-ci.com/SebiCreator/Dame.svg?branch=main)](https://app.travis-ci.com/SebiCreator/Dame)
-[![Coverage Status](https://coveralls.io/repos/github/SebiCreator/Dame/badge.svg?branch=master)](https://coveralls.io/github/SebiCreator/Dame?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/SebiCreator/Dame/badge.svg?branch=main)](https://coveralls.io/github/SebiCreator/Dame?branch=main)
 
 
 ## sbt project compiled with Scala 3
