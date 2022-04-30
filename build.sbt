@@ -9,7 +9,7 @@ lazy val root = project
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.11",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
     jacocoCoverallsServiceName := "github-actions",
-    jacocoCoverallsBranch := sys.env.get("Development"),
+    jacocoCoverallsBranch := sys.env.get("main"),
     jacocoCoverallsPullRequest := sys.env.get("GITHUB_EVENT_NAME"),
     jacocoCoverallsRepoToken := sys.env.get("COVERALLS_REPO_TOKEN")
   )

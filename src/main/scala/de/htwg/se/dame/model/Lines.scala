@@ -1,4 +1,4 @@
-package de.htwg.se.dame.model.Lines
+package de.htwg.se.dame.model
 
 var eol = sys.props("line.separator")
 // Lines & Cells
