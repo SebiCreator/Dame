@@ -1,6 +1,6 @@
 *.DS_Store
 **/target/**
-**/project/**
+# **/project/**
 .bsp
 .metals/
 **.vscode/**
