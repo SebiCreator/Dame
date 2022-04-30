@@ -1,4 +1,4 @@
-package de.htwg.se.dame
+package de.htwg.se.dame.model
 
 
 import org.scalatest.wordspec.AnyWordSpec
