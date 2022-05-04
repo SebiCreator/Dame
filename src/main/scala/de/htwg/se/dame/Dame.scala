@@ -28,5 +28,9 @@ object Dame {
 
   val m = Matrix().initFill()
   //m.data.foreach(println)
-  println(m.toCrazyList())
+  println(m.rightMovePossible(0,0))
+  println(m.rightMovePossible(5,5))
+  println(m.rightMovePossible(3,2))
+  println(m.rightMovePossible(3,0))
+  println(m.rightMovePossible(0,3))
     

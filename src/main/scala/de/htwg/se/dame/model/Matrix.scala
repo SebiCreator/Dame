@@ -11,13 +11,6 @@ case class Matrix[T](
     player2: String = "X"
 ) {
 
-/*  def initFill(): Matrix[Int] = {
-    val p1 = List.tabulate((cells * (cells - 2) / 2))(_ => 1)
-    val p2 = List.tabulate((cells * (cells - 2) / 2))(_ => 2)
-    val mid = List.tabulate(cells * 2)(_ => 0)
-    val concat = p1 :: mid :: p2 :: List()
-    Matrix(concat)
-  }*/
 
   def initFill(): Matrix[Int] = {
     val p1 = List.tabulate(cells*2)(_ => 1) 
@@ -26,12 +19,6 @@ case class Matrix[T](
     val c = p1 ++ e ++ p2
     Matrix((c grouped cells).toList)
   }
-
-  def toCrazyList(): List[List[T]] = {
-    val f = data.flatten
-    (f grouped cells*2).toList
-  }
-
 
   def numToPlayer(num: T): String = {
     if (num == 1) player1 else if (num == 2) player2 else " "
@@ -50,12 +37,24 @@ case class Matrix[T](
     copy(data.updated(row, data(row).updated(col, symbol)))
   }
 
-  //def rightMovePossible(row: Int, col: Int): Boolean = {
+  def rightMovePossible(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
     
-  //}
+    if(col+1 > pcell || row+1 > pcell || row-1 < 0){
+      return false
+    }
+    return true
+  }
 
-  //def leftMovePossible(row: Int, col: Int): Boolean = {
+  def leftMovePossible(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
 
-  //}
+    if(col-1 < 0 || row-1 > pcell | row-1 < 0){
+      return false
+    }
+    return true
+  }
+
+  
 
 }
