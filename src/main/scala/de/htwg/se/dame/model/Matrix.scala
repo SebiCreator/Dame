@@ -4,15 +4,15 @@ import scala.collection.mutable.ListBuffer
 
 import scala.compiletime.ops.boolean
 
-case class Matrix[T](
-    data: List[List[T]] = Nil,
+case class Matrix(
+    data: List[List[Int]] = Nil,
     cells: Int = 6,
     player1: String = "O",
     player2: String = "X"
 ) {
 
 
-  def initFill(): Matrix[Int] = {
+  def initFill(): Matrix = {
     val p1 = List.tabulate(cells*2)(_ => 1) 
     val p2 = List.tabulate(cells*2)(_ => 2) 
     val e = List.tabulate(Math.pow(cells,2).toInt - (cells*4))(_ => 0)
@@ -20,7 +20,7 @@ case class Matrix[T](
     Matrix((c grouped cells).toList)
   }
 
-  def numToPlayer(num: T): String = {
+  def numToPlayer(num: Int): String = {
     if (num == 1) player1 else if (num == 2) player2 else " "
   }
 
@@ -33,14 +33,54 @@ case class Matrix[T](
     (res grouped cells / 2).toList
   }
 
-  def replaceCell(row: Int, col: Int, symbol: T): Matrix[T] = {
+  def replaceCell(row: Int, col: Int, symbol: Int): Matrix = {
     copy(data.updated(row, data(row).updated(col, symbol)))
   }
+
+  def cellIsEmpty(row: Int, col: Int): Boolean = {
+    data(row)(col) == 0
+  }
+
+  def moveLeft(row: Int, col: Int): Matrix = {
+    val dcol = col-1
+    val drow = row-1
+    // Better Error Handling
+    if(!leftMovePossible(row,col)){
+      println("Nicht möglich")
+      return Matrix(Nil)
+    }
+    if(!cellIsEmpty(drow,dcol)){
+      println("Besetzt")
+      return Matrix(Nil)
+    }
+    val sym = data(row)(col)
+    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+  }
+
+  def moveRight(row: Int, col: Int): Matrix = {
+    val dcol = col+1
+    val drow = row-1
+    // Better Error Handling
+    if(!rightMovePossible(row,col)){
+      println("Nicht möglich")
+      return Matrix(Nil)
+    }
+    if(!cellIsEmpty(drow,dcol)){
+      println("Besetzt")
+      return Matrix(Nil)
+    }
+    val sym = data(row)(col)
+    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+  }
+
 
   def rightMovePossible(row: Int, col: Int): Boolean = {
     val pcell = cells-1
     
-    if(col+1 > pcell || row+1 > pcell || row-1 < 0){
+    if(col+1 > pcell || row-1 < 0){
+      return false
+    }
+    if (data(row-1)(col+1) != 0){
       return false
     }
     return true
@@ -49,10 +89,46 @@ case class Matrix[T](
   def leftMovePossible(row: Int, col: Int): Boolean = {
     val pcell = cells-1
 
-    if(col-1 < 0 || row-1 > pcell | row-1 < 0){
+    if(col-1 < 0 || row-1 < 0){
+      return false
+    }
+    if(data(row-1)(col-1) != 0){
       return false
     }
     return true
+  }
+
+  def rightJumpPossible(row: Int, col: Int, player: Int): Boolean = {
+    val pcell = cells -1
+    val des = if(player == 1) 2 else 1
+    val erow = row-1
+    val ecol = col+1
+    val drow = row-2
+    val dcol = col+2
+    if(erow < 0 || ecol > pcell || drow < 0 || dcol > pcell){
+      return false
+    }
+    if( (data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
+      return true
+    }else {
+      return false
+    }
+
+  }
+  
+  def jumpLeftPossible(row: Int, col: Int, player: Int): Boolean = {
+    val des = if(player == 1) 2 else 1
+    val erow = row-1
+    val ecol = col-1
+    val drow = row-2
+    val dcol = col-2
+    if(erow < 0 || ecol < 0 || drow < 0 || dcol < 0){
+      return false
+    }
+    if((data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
+      return true
+    }
+    return false
   }
 
   

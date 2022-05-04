@@ -27,10 +27,14 @@ object Dame {
 @main def hello: Unit =
 
   val m = Matrix().initFill()
-  //m.data.foreach(println)
-  println(m.rightMovePossible(0,0))
-  println(m.rightMovePossible(5,5))
-  println(m.rightMovePossible(3,2))
-  println(m.rightMovePossible(3,0))
-  println(m.rightMovePossible(0,3))
+  m.data.foreach(println)
+  val x = m.moveLeft(4,1)
+  println("\n")
+  x.data.foreach(println)
+  println("\n")
+  val y = x.moveRight(3,0)
+  y.data.foreach(println)
+  
+
+
     
