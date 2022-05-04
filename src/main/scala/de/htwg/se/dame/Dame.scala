@@ -6,6 +6,7 @@ import de.htwg.se.dame.model.Matrix
 
 import scala.io.StdIn.readLine
 
+/*
 object Dame {
   val controller = new Controller(new Matrix)
   val tui = new Tui(controller)
@@ -21,12 +22,11 @@ object Dame {
     }
   }
 }
+*/
 
-/*
 @main def hello: Unit =
 
-  val controller = new Controller(new Matrix)
-  val tui = new Tui(controller)
-  tui.processInputLine("help")
-  tui.processInputLine("custom")
- */
+  val m = Matrix().initFill()
+  //m.data.foreach(println)
+  println(m.toCrazyList())
+    
