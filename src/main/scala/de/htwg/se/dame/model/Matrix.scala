@@ -41,11 +41,11 @@ case class Matrix(
     data(row)(col) == 0
   }
 
-  def moveLeft(row: Int, col: Int): Matrix = {
+  def moveLeft2(row: Int, col: Int): Matrix = {
     val dcol = col-1
     val drow = row-1
     // Better Error Handling
-    if(!leftMovePossible(row,col)){
+    if(!leftMovePossible2(row,col)){
       println("Nicht möglich")
       return Matrix(Nil)
     }
@@ -57,11 +57,43 @@ case class Matrix(
     replaceCell(drow,dcol,sym).replaceCell(row,col,0)
   }
 
-  def moveRight(row: Int, col: Int): Matrix = {
+  def moveLeft1(row: Int, col: Int): Matrix= {
+    val dcol = col+1
+    val drow = row+1
+    // Better Error Handling
+    if(!leftMovePossible1(row,col)){
+      println("Nicht möglich")
+      return Matrix(Nil)
+    }
+    if(!cellIsEmpty(drow,dcol)){
+      println("Besetzt")
+      return Matrix(Nil)
+    }
+    val sym = data(row)(col)
+    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+  }
+
+  def moveRight2(row: Int, col: Int): Matrix = {
     val dcol = col+1
     val drow = row-1
     // Better Error Handling
-    if(!rightMovePossible(row,col)){
+    if(!rightMovePossible2(row,col)){
+      println("Nicht möglich")
+      return Matrix(Nil)
+    }
+    if(!cellIsEmpty(drow,dcol)){
+      println("Besetzt")
+      return Matrix(Nil)
+    }
+    val sym = data(row)(col)
+    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+  }
+
+  def moveRight1(row: Int, col: Int): Matrix= {
+    val dcol = col-1
+    val drow = row+1
+    // Better Error Handling
+    if(!leftMovePossible1(row,col)){
       println("Nicht möglich")
       return Matrix(Nil)
     }
@@ -74,7 +106,7 @@ case class Matrix(
   }
 
 
-  def rightMovePossible(row: Int, col: Int): Boolean = {
+  def rightMovePossible2(row: Int, col: Int): Boolean = {
     val pcell = cells-1
     
     if(col+1 > pcell || row-1 < 0){
@@ -86,7 +118,18 @@ case class Matrix(
     return true
   }
 
-  def leftMovePossible(row: Int, col: Int): Boolean = {
+  def rightMovePossible1(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
+    if(col-1 < 0 || row+1 > pcell){
+      return false
+    }
+    if(data(col-1)(row+1) != 0){
+      return false
+    }
+    return true
+  }
+
+  def leftMovePossible2(row: Int, col: Int): Boolean = {
     val pcell = cells-1
 
     if(col-1 < 0 || row-1 < 0){
@@ -98,7 +141,19 @@ case class Matrix(
     return true
   }
 
-  def rightJumpPossible(row: Int, col: Int, player: Int): Boolean = {
+  def leftMovePossible1(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
+
+    if(col+1 > pcell || row+1 > pcell){
+      return false
+    }
+    if(data(row+1)(col+1) != 0){
+      return false
+    }
+    return true
+  }
+
+  def rightJumpPossible2(row: Int, col: Int, player: Int): Boolean = {
     val pcell = cells -1
     val des = if(player == 1) 2 else 1
     val erow = row-1
@@ -116,7 +171,7 @@ case class Matrix(
 
   }
   
-  def jumpLeftPossible(row: Int, col: Int, player: Int): Boolean = {
+  def jumpLeftPossible2(row: Int, col: Int, player: Int): Boolean = {
     val des = if(player == 1) 2 else 1
     val erow = row-1
     val ecol = col-1

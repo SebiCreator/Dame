@@ -28,13 +28,15 @@ object Dame {
 
   val m = Matrix().initFill()
   m.data.foreach(println)
-  val x = m.moveLeft(4,1)
+  val x = m.moveLeft2(4,1)
   println("\n")
   x.data.foreach(println)
   println("\n")
-  val y = x.moveRight(3,0)
-  y.data.foreach(println)
-  
+  val m1 = x.moveLeft1(1,4)
+  m1.data.foreach(println)
+  println("\n")
+  val x1 = m1.moveRight1(1,1)
+  x1.data.foreach(println)
 
 
     
