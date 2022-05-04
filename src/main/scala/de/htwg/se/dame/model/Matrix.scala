@@ -153,9 +153,9 @@ case class Matrix(
     return true
   }
 
-  def rightJumpPossible2(row: Int, col: Int, player: Int): Boolean = {
+  def rightJumpPossible2(row: Int, col: Int): Boolean = {
     val pcell = cells -1
-    val des = if(player == 1) 2 else 1
+    val des = 1
     val erow = row-1
     val ecol = col+1
     val drow = row-2
@@ -170,14 +170,48 @@ case class Matrix(
     }
 
   }
+
+  def rightJumpPossible1(row: Int, col: Int): Boolean = {
+    val pcell = cells -1
+    val des = 2
+    val erow = row+1
+    val ecol = col-1
+    val drow = row+2
+    val dcol = col-2
+    if(erow > pcell || ecol < 0|| drow > pcell || dcol < 0){
+      return false
+    }
+    if( (data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
+      return true
+    }else {
+      return false
+    }
+
+  }
   
-  def jumpLeftPossible2(row: Int, col: Int, player: Int): Boolean = {
-    val des = if(player == 1) 2 else 1
+  def leftJumpPossible2(row: Int, col: Int): Boolean = {
+    val des = 1
     val erow = row-1
     val ecol = col-1
     val drow = row-2
     val dcol = col-2
     if(erow < 0 || ecol < 0 || drow < 0 || dcol < 0){
+      return false
+    }
+    if((data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
+      return true
+    }
+    return false
+  }
+  
+  def leftJumpPossible1(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
+    val des = 2
+    val erow = row+1
+    val ecol = col+1
+    val drow = row+2
+    val dcol = col+2
+    if(erow > pcell  || ecol > pcell || drow > pcell || dcol > pcell){
       return false
     }
     if((data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){

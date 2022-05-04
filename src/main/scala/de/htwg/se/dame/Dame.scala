@@ -35,8 +35,14 @@ object Dame {
   val m1 = x.moveLeft1(1,4)
   m1.data.foreach(println)
   println("\n")
-  val x1 = m1.moveRight1(1,1)
+  val x1 = m1.moveLeft1(1,1)
   x1.data.foreach(println)
+  println("\n")
+  val x2 = x1.moveRight2(4,2)
+  x2.data.foreach(println)
+  println("\n")
+  println(x2.leftJumpPossible2(3,3))
+
 
 
     
