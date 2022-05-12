@@ -7,7 +7,7 @@ import org.scalatest.matchers.should.Matchers._
 def formatHead(str: String) = "%2$s %1$s %2$s".format(str, "##")
 def formatText(str: String) = "%2$s %1$s %2$s\n".format(str, "  ")
 
-class Dame extends AnyWordSpec {
+class LinesSpec extends AnyWordSpec {
   // Lines & Cells
   formatHead(" Lines and Cells ") should {
     '\n' +

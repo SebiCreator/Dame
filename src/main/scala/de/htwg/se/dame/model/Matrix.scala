@@ -4,22 +4,23 @@ import scala.collection.mutable.ListBuffer
 
 import scala.compiletime.ops.boolean
 
-case class Matrix[T](
-    data: List[List[T]] = Nil,
+case class Matrix(
+    data: List[List[Int]] = Nil,
     cells: Int = 6,
     player1: String = "O",
     player2: String = "X"
 ) {
 
-  def initFill(): Matrix[Int] = {
-    val p1 = List.tabulate((cells * (cells - 2) / 2))(_ => 1)
-    val p2 = List.tabulate((cells * (cells - 2) / 2))(_ => 2)
-    val mid = List.tabulate(cells * 2)(_ => 0)
-    val concat = p1 :: mid :: p2 :: List()
-    Matrix(concat)
+
+  def initFill(): Matrix = {
+    val p1 = List.tabulate(cells*2)(_ => 1) 
+    val p2 = List.tabulate(cells*2)(_ => 2) 
+    val e = List.tabulate(Math.pow(cells,2).toInt - (cells*4))(_ => 0)
+    val c = p1 ++ e ++ p2
+    Matrix((c grouped cells).toList)
   }
 
-  def numToPlayer(num: T): String = {
+  def numToPlayer(num: Int): String = {
     if (num == 1) player1 else if (num == 2) player2 else " "
   }
 
@@ -32,8 +33,11 @@ case class Matrix[T](
     (res grouped cells / 2).toList
   }
 
-  def replaceCell(row: Int, col: Int, symbol: T): Matrix[T] = {
+  def replaceCell(row: Int, col: Int, symbol: Int): Matrix = {
     copy(data.updated(row, data(row).updated(col, symbol)))
   }
+
+
+  
 
 }

@@ -6,6 +6,7 @@ import de.htwg.se.dame.model.Matrix
 
 import scala.io.StdIn.readLine
 
+/*
 object Dame {
   val controller = new Controller(new Matrix)
   val tui = new Tui(controller)
@@ -21,12 +22,30 @@ object Dame {
     }
   }
 }
+*/
 
-/*
 @main def hello: Unit =
 
-  val controller = new Controller(new Matrix)
-  val tui = new Tui(controller)
-  tui.processInputLine("help")
-  tui.processInputLine("custom")
- */
+  //val m = Matrix().initFill()
+  //m.data.foreach(println)
+  //val x = m.moveLeft2(4,1)
+  //println("\n")
+  //x.data.foreach(println)
+  //println("\n")
+  //val m1 = x.moveLeft1(1,4)
+  //m1.data.foreach(println)
+  //println("\n")
+  //val x1 = m1.moveLeft1(1,1)
+  //x1.data.foreach(println)
+  //println("\n")
+  //val x2 = x1.moveRight2(4,2)
+  //x2.data.foreach(println)
+  //println("\n")
+  //println(x2.leftJumpPossible2(3,3))
+
+  val default= new Matrix().initFill()
+  val replaced2 = default.replaceCell(2,4,4)
+  println(replaced2.data(2) )
+
+
+    
