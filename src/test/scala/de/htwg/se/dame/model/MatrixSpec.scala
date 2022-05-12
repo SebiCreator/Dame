@@ -49,4 +49,34 @@ class MatrixSpec extends AnyWordSpec with Matchers {
     val replaced2 = default.replaceCell(2,4,4)
     replaced2.data(2) should be (List(0,0,0,0,4,0))
   } 
+  formatText("cellIsEmpty returns a boolean value if cell is empty or not and") should {
+    val default = new Matrix().initFill()
+    default.cellIsEmpty(0,0) should be (false)
+    default.cellIsEmpty(2,0) should be (true)
+  }
+
+  formatText("rightMovePossibleL returns if lower player can move left given the arg coordinates it") should {
+    val default = new Matrix().initFill()
+    default.rightMovePossibleL(4,0) should be (true)
+    default.rightMovePossibleL(1,0) should be (false)
+  }
+
+  formatText("rightMovePossibleU returns if upper player can move left given the arg coordinates it") should {
+    val default = new Matrix().initFill()
+    default.rightMovePossibleU(1,3) should be (true)
+    default.rightMovePossibleU(1,0) should be (false)
+  }
+
+  formatText("leftMovePossibleL returns if lower player can move left given the arg coordinates it") should {
+    val default = new Matrix().initFill()
+    default.leftMovePossibleL(4,3) should be (true)
+    default.leftMovePossibleL(4,0) should be (false)
+  }
+
+  formatText("leftMovePossibleU returns if upper player can move left given the arg coordinates it") should {
+    val default = new Matrix().initFill()
+    default.leftMovePossibleU(2,2) should be (true)
+    default.leftMovePossibleU(4,0) should be (false)
+  }
+
 }

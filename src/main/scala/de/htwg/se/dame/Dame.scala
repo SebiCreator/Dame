@@ -44,8 +44,11 @@ object Dame {
   //println(x2.leftJumpPossible2(3,3))
 
   val default= new Matrix().initFill()
-  val replaced2 = default.replaceCell(2,4,4)
-  println(replaced2.data(2) )
+  default.data.foreach(println)
+  println(default.leftMovePossibleL(4,3)) // True
+  println(default.leftMovePossibleL(4,0)) // False
+  println(default.leftMovePossibleU(2,2)) // True
+  println(default.leftMovePossibleU(4,0)) // False
 
 
     

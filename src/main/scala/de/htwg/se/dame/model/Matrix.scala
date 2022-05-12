@@ -37,6 +37,38 @@ case class Matrix(
     copy(data.updated(row, data(row).updated(col, symbol)))
   }
 
+  def cellIsEmpty(row: Int, col: Int): Boolean = {
+    data(row)(col) == 0
+  }
+
+  /*
+  def rightMovePossible2(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
+    if(col+1 > pcell || row-1 < 0){
+      return false
+    }
+    if (data(row-1)(col+1) != 0){
+      return false
+    }
+    return true
+  }
+
+  def rightMovePossible1(row: Int, col: Int): Boolean = {
+    val pcell = cells-1
+    if(col-1 < 0 || row+1 > pcell){
+      return false
+    }
+    if(data(col-1)(row+1) != 0){
+      return false
+    }
+    return true
+  }
+  */
+
+  def rightMovePossibleL(row: Int, col: Int): Boolean = !(col+1 > cells-1||row -1 < 0) && !(data(row-1)(col+1) != 0)
+  def rightMovePossibleU(row: Int, col: Int): Boolean = !(col-1<0||row+1 > cells-1) && !(data(col-1)(row+1) != 0)
+  def leftMovePossibleL(row: Int, col: Int): Boolean = !(col-1<0 ||row-1 < 0) && !(data(row-1)(col-1) != 0)
+  def leftMovePossibleU(row: Int, col: Int): Boolean = !(col+1 > cells-1 ||row+1 > cells-1) && !(data(row+1)(col+1) != 0)
 
   
 
