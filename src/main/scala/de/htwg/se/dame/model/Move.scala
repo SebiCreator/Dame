@@ -8,7 +8,7 @@ to be extended with additional moves for the dame figure
 
 object Move {
 
-  var move = if (readLine() == 1) moveLeft else moveRight
+  var move = if (readLine() == "1") moveLeft else moveRight
 
   def moveLeft = println("left")
 
