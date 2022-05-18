@@ -10,8 +10,8 @@ object Move {
 
   var move = if (readLine() == "1") moveLeft else moveRight
 
-  def moveLeft = println("left")
+  def moveLeft = "left"
 
-  def moveRight = println("right")
+  def moveRight = "right"
 
 }

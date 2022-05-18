@@ -8,7 +8,7 @@ import de.htwg.se.dame.util.Observer
 
 class ControllerSpec extends AnyWordSpec {
   "The Controller" should {
-    val controller = Controller(new Matrix[String](Nil, 8, "X", "O"))
+    val controller = Controller(new Matrix(Nil, 8, "X", "O"))
     "Fill the initial GameBoard with the Backend Matrix" in {
       controller.initFill("#")
 
