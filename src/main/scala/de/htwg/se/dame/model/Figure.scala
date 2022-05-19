@@ -88,11 +88,6 @@ private class Dame_Figure extends Figure {
 
       case "left" => matrix.moveRightU(row, col)
 
-      /* TODO
-      case "backLeft" =>
-
-      case "backRight" =>
-       */
     }
   }
 
