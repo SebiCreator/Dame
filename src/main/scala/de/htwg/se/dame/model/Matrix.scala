@@ -1,7 +1,5 @@
 package de.htwg.se.dame.model
 
-import scala.collection.mutable.ListBuffer
-
 import scala.compiletime.ops.boolean
 
 case class Matrix(
@@ -11,11 +9,10 @@ case class Matrix(
     player2: String = "X"
 ) {
 
-
   def initFill(): Matrix = {
-    val p1 = List.tabulate(cells*2)(_ => 1) 
-    val p2 = List.tabulate(cells*2)(_ => 2) 
-    val e = List.tabulate(Math.pow(cells,2).toInt - (cells*4))(_ => 0)
+    val p1 = List.tabulate(cells * 2)(_ => 1)
+    val p2 = List.tabulate(cells * 2)(_ => 2)
+    val e = List.tabulate(Math.pow(cells, 2).toInt - (cells * 4))(_ => 0)
     val c = p1 ++ e ++ p2
     Matrix((c grouped cells).toList)
   }
@@ -41,185 +38,72 @@ case class Matrix(
     data(row)(col) == 0
   }
 
-  def moveLeft2(row: Int, col: Int): Matrix = {
-    val dcol = col-1
-    val drow = row-1
+  def rightMovePossibleL(row: Int, col: Int): Boolean =
+    !(col + 1 > cells - 1 || row - 1 < 0) && !(data(row - 1)(col + 1) != 0)
+  def rightMovePossibleU(row: Int, col: Int): Boolean =
+    !(col - 1 < 0 || row + 1 > cells - 1) && !(data(col - 1)(row + 1) != 0)
+  def leftMovePossibleL(row: Int, col: Int): Boolean =
+    !(col - 1 < 0 || row - 1 < 0) && !(data(row - 1)(col - 1) != 0)
+  def leftMovePossibleU(row: Int, col: Int): Boolean =
+    !(col + 1 > cells - 1 || row + 1 > cells - 1) && !(data(row + 1)(
+      col + 1
+    ) != 0)
+
+  def moveLeftL(row: Int, col: Int): Matrix = {
+    val dcol = col - 1
+    val drow = row - 1
     // Better Error Handling
-    if(!leftMovePossible2(row,col)){
-      println("Nicht möglich")
+    if (!leftMovePossibleL(row, col)) {
       return Matrix(Nil)
     }
-    if(!cellIsEmpty(drow,dcol)){
-      println("Besetzt")
+    if (!cellIsEmpty(drow, dcol)) {
       return Matrix(Nil)
     }
     val sym = data(row)(col)
-    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
 
-  def moveLeft1(row: Int, col: Int): Matrix= {
-    val dcol = col+1
-    val drow = row+1
+  def moveLeftU(row: Int, col: Int): Matrix = {
+    val dcol = col + 1
+    val drow = row + 1
     // Better Error Handling
-    if(!leftMovePossible1(row,col)){
-      println("Nicht möglich")
+    if (!leftMovePossibleU(row, col)) {
       return Matrix(Nil)
     }
-    if(!cellIsEmpty(drow,dcol)){
-      println("Besetzt")
+    if (!cellIsEmpty(drow, dcol)) {
       return Matrix(Nil)
     }
     val sym = data(row)(col)
-    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
 
-  def moveRight2(row: Int, col: Int): Matrix = {
-    val dcol = col+1
-    val drow = row-1
+  def moveRightL(row: Int, col: Int): Matrix = {
+    val dcol = col + 1
+    val drow = row - 1
     // Better Error Handling
-    if(!rightMovePossible2(row,col)){
-      println("Nicht möglich")
+    if (!rightMovePossibleL(row, col)) {
       return Matrix(Nil)
     }
-    if(!cellIsEmpty(drow,dcol)){
-      println("Besetzt")
+    if (!cellIsEmpty(drow, dcol)) {
       return Matrix(Nil)
     }
     val sym = data(row)(col)
-    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
 
-  def moveRight1(row: Int, col: Int): Matrix= {
-    val dcol = col-1
-    val drow = row+1
+  def moveRightU(row: Int, col: Int): Matrix = {
+    val dcol = col - 1
+    val drow = row + 1
     // Better Error Handling
-    if(!leftMovePossible1(row,col)){
-      println("Nicht möglich")
+    if (!leftMovePossibleU(row, col)) {
       return Matrix(Nil)
     }
-    if(!cellIsEmpty(drow,dcol)){
-      println("Besetzt")
+    if (!cellIsEmpty(drow, dcol)) {
       return Matrix(Nil)
     }
     val sym = data(row)(col)
-    replaceCell(drow,dcol,sym).replaceCell(row,col,0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
-
-
-  def rightMovePossible2(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-    
-    if(col+1 > pcell || row-1 < 0){
-      return false
-    }
-    if (data(row-1)(col+1) != 0){
-      return false
-    }
-    return true
-  }
-
-  def rightMovePossible1(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-    if(col-1 < 0 || row+1 > pcell){
-      return false
-    }
-    if(data(col-1)(row+1) != 0){
-      return false
-    }
-    return true
-  }
-
-  def leftMovePossible2(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-
-    if(col-1 < 0 || row-1 < 0){
-      return false
-    }
-    if(data(row-1)(col-1) != 0){
-      return false
-    }
-    return true
-  }
-
-  def leftMovePossible1(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-
-    if(col+1 > pcell || row+1 > pcell){
-      return false
-    }
-    if(data(row+1)(col+1) != 0){
-      return false
-    }
-    return true
-  }
-
-  def rightJumpPossible2(row: Int, col: Int): Boolean = {
-    val pcell = cells -1
-    val des = 1
-    val erow = row-1
-    val ecol = col+1
-    val drow = row-2
-    val dcol = col+2
-    if(erow < 0 || ecol > pcell || drow < 0 || dcol > pcell){
-      return false
-    }
-    if( (data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
-      return true
-    }else {
-      return false
-    }
-
-  }
-
-  def rightJumpPossible1(row: Int, col: Int): Boolean = {
-    val pcell = cells -1
-    val des = 2
-    val erow = row+1
-    val ecol = col-1
-    val drow = row+2
-    val dcol = col-2
-    if(erow > pcell || ecol < 0|| drow > pcell || dcol < 0){
-      return false
-    }
-    if( (data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
-      return true
-    }else {
-      return false
-    }
-
-  }
-  
-  def leftJumpPossible2(row: Int, col: Int): Boolean = {
-    val des = 1
-    val erow = row-1
-    val ecol = col-1
-    val drow = row-2
-    val dcol = col-2
-    if(erow < 0 || ecol < 0 || drow < 0 || dcol < 0){
-      return false
-    }
-    if((data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
-      return true
-    }
-    return false
-  }
-  
-  def leftJumpPossible1(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-    val des = 2
-    val erow = row+1
-    val ecol = col+1
-    val drow = row+2
-    val dcol = col+2
-    if(erow > pcell  || ecol > pcell || drow > pcell || dcol > pcell){
-      return false
-    }
-    if((data(erow)(ecol) == des) && (data(drow)(dcol) == 0)){
-      return true
-    }
-    return false
-  }
-
-  
 
 }
+
