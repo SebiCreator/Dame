@@ -1,7 +1,5 @@
 package de.htwg.se.dame.model
 
-import scala.collection.mutable.ListBuffer
-
 import scala.compiletime.ops.boolean
 
 case class Matrix(
@@ -11,11 +9,10 @@ case class Matrix(
     player2: String = "X"
 ) {
 
-
   def initFill(): Matrix = {
-    val p1 = List.tabulate(cells*2)(_ => 1) 
-    val p2 = List.tabulate(cells*2)(_ => 2) 
-    val e = List.tabulate(Math.pow(cells,2).toInt - (cells*4))(_ => 0)
+    val p1 = List.tabulate(cells * 2)(_ => 1)
+    val p2 = List.tabulate(cells * 2)(_ => 2)
+    val e = List.tabulate(Math.pow(cells, 2).toInt - (cells * 4))(_ => 0)
     val c = p1 ++ e ++ p2
     Matrix((c grouped cells).toList)
   }
@@ -41,35 +38,71 @@ case class Matrix(
     data(row)(col) == 0
   }
 
-  /*
-  def rightMovePossible2(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-    if(col+1 > pcell || row-1 < 0){
-      return false
+  def rightMovePossibleL(row: Int, col: Int): Boolean =
+    !(col + 1 > cells - 1 || row - 1 < 0) && !(data(row - 1)(col + 1) != 0)
+  def rightMovePossibleU(row: Int, col: Int): Boolean =
+    !(col - 1 < 0 || row + 1 > cells - 1) && !(data(col - 1)(row + 1) != 0)
+  def leftMovePossibleL(row: Int, col: Int): Boolean =
+    !(col - 1 < 0 || row - 1 < 0) && !(data(row - 1)(col - 1) != 0)
+  def leftMovePossibleU(row: Int, col: Int): Boolean =
+    !(col + 1 > cells - 1 || row + 1 > cells - 1) && !(data(row + 1)(
+      col + 1
+    ) != 0)
+
+  def moveLeftL(row: Int, col: Int): Matrix = {
+    val dcol = col - 1
+    val drow = row - 1
+    // Better Error Handling
+    if (!leftMovePossibleL(row, col)) {
+      return Matrix(Nil)
     }
-    if (data(row-1)(col+1) != 0){
-      return false
+    if (!cellIsEmpty(drow, dcol)) {
+      return Matrix(Nil)
     }
-    return true
+    val sym = data(row)(col)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
 
-  def rightMovePossible1(row: Int, col: Int): Boolean = {
-    val pcell = cells-1
-    if(col-1 < 0 || row+1 > pcell){
-      return false
+  def moveLeftU(row: Int, col: Int): Matrix = {
+    val dcol = col + 1
+    val drow = row + 1
+    // Better Error Handling
+    if (!leftMovePossibleU(row, col)) {
+      return Matrix(Nil)
     }
-    if(data(col-1)(row+1) != 0){
-      return false
+    if (!cellIsEmpty(drow, dcol)) {
+      return Matrix(Nil)
     }
-    return true
+    val sym = data(row)(col)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
-  */
 
-  def rightMovePossibleL(row: Int, col: Int): Boolean = !(col+1 > cells-1||row -1 < 0) && !(data(row-1)(col+1) != 0)
-  def rightMovePossibleU(row: Int, col: Int): Boolean = !(col-1<0||row+1 > cells-1) && !(data(col-1)(row+1) != 0)
-  def leftMovePossibleL(row: Int, col: Int): Boolean = !(col-1<0 ||row-1 < 0) && !(data(row-1)(col-1) != 0)
-  def leftMovePossibleU(row: Int, col: Int): Boolean = !(col+1 > cells-1 ||row+1 > cells-1) && !(data(row+1)(col+1) != 0)
+  def moveRightL(row: Int, col: Int): Matrix = {
+    val dcol = col + 1
+    val drow = row - 1
+    // Better Error Handling
+    if (!rightMovePossibleL(row, col)) {
+      return Matrix(Nil)
+    }
+    if (!cellIsEmpty(drow, dcol)) {
+      return Matrix(Nil)
+    }
+    val sym = data(row)(col)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
+  }
 
-  
+  def moveRightU(row: Int, col: Int): Matrix = {
+    val dcol = col - 1
+    val drow = row + 1
+    // Better Error Handling
+    if (!leftMovePossibleU(row, col)) {
+      return Matrix(Nil)
+    }
+    if (!cellIsEmpty(drow, dcol)) {
+      return Matrix(Nil)
+    }
+    val sym = data(row)(col)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
+  }
 
 }
