@@ -11,20 +11,25 @@ class FigureSpec extends AnyWordSpec {
       farmer.onBoard should be(true)
     }
     "gets a command" should {
-      val farmer = new Farmer_Figure
+      val farmer = new Farmer_Figure()
       val matrix = new Matrix().initFill()
+
+
+
       farmer.command(matrix, "right", "Player1", 2, 2) should be(
         matrix.moveRightU(2, 2)
       )
-      farmer.command(matrix, "left", "Player1", 1, 2) should be(
-        matrix.moveRightU(1, 2)
-      )
+
+
       farmer.command(matrix, "left", "Player2", 3, 3) should be(
         matrix.moveLeftL(3, 3)
       )
       farmer.command(matrix, "right", "Player2", 4, 5) should be(
         matrix.moveRightL(4, 5)
       )
+
+
+
     }
   }
   "object Figure " when {

@@ -26,24 +26,8 @@ object Dame {
 */
 
 @main def hello: Unit =
-  println(modLine(2,List((1,1),(2,2)))) // |#O# X #O# X |
-  //println(modBlock(1,4,List((1,0),(2,0),(1,1),(2,2)))) // |OXOXOXOX|
-  //println(modBoard(1,4,List(
-    //List((1,1),(2,2)),
-    //List((0,0),(1,1)),
-    //List((0,0),(1,1)),
-    //List((0,0),(1,1))
-  //))) 
-  //|OXOX|
-  //|OXOX|
-  //|OXOX|
-  //|OXOX|
-  println(modBoardWrapped(1,2,List(
-    List((1,1),(2,2)),
-    List((0,0),(1,1)),
-    List((0,0),(1,1)),
-    List((0,0),(1,1)) 
-  )))
+  val x = 1
+  
 
 
 
