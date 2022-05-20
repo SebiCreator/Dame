@@ -110,6 +110,5 @@ object Figure {
   def apply(kind: String) = kind match {
     case "Dame"   => new Dame_Figure()
     case "Farmer" => new Farmer_Figure()
-
   }
 }

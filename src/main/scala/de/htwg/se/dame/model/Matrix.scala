@@ -49,16 +49,31 @@ case class Matrix(
       col + 1
     ) != 0)
 
+  def movePossible(pos: String, direction: String,row: Int, col: Int) : Boolean =  {
+    pos match {
+      case "lower" => movePossibleLower(direction,row,col)
+      case "upper" => movePossibleUpper(direction,row,col)
+    }
+  }
+
+  def movePossibleLower(direction: String,row: Int, col: Int): Boolean = {
+    direction match{
+      case "left" => leftMovePossibleL(row,col)
+      case "right" => rightMovePossibleL(row,col)
+    }
+  }
+
+  def movePossibleUpper(direction: String,row: Int, col: Int): Boolean = {
+      direction match{
+        case "left" => leftMovePossibleU(row,col)
+        case "right" => rightMovePossibleU(row,col)
+      }
+  }
+
   def moveLeftL(row: Int, col: Int): Matrix = {
     val dcol = col - 1
     val drow = row - 1
-    // Better Error Handling
-    if (!leftMovePossibleL(row, col)) {
-      return Matrix(Nil)
-    }
-    if (!cellIsEmpty(drow, dcol)) {
-      return Matrix(Nil)
-    }
+    if(!leftMovePossibleL(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
@@ -66,13 +81,7 @@ case class Matrix(
   def moveLeftU(row: Int, col: Int): Matrix = {
     val dcol = col + 1
     val drow = row + 1
-    // Better Error Handling
-    if (!leftMovePossibleU(row, col)) {
-      return Matrix(Nil)
-    }
-    if (!cellIsEmpty(drow, dcol)) {
-      return Matrix(Nil)
-    }
+    if(!leftMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
@@ -80,13 +89,7 @@ case class Matrix(
   def moveRightL(row: Int, col: Int): Matrix = {
     val dcol = col + 1
     val drow = row - 1
-    // Better Error Handling
-    if (!rightMovePossibleL(row, col)) {
-      return Matrix(Nil)
-    }
-    if (!cellIsEmpty(drow, dcol)) {
-      return Matrix(Nil)
-    }
+    if(!rightMovePossibleL(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
@@ -94,13 +97,7 @@ case class Matrix(
   def moveRightU(row: Int, col: Int): Matrix = {
     val dcol = col - 1
     val drow = row + 1
-    // Better Error Handling
-    if (!leftMovePossibleU(row, col)) {
-      return Matrix(Nil)
-    }
-    if (!cellIsEmpty(drow, dcol)) {
-      return Matrix(Nil)
-    }
+    if(!leftMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
