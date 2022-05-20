@@ -83,7 +83,7 @@ private class Dame_Figure extends Figure {
       case "right" => matrix.moveRightU(row, col)
       case "left" => matrix.moveLeftU(row, col)
       case "right-back" => matrix.moveRightL(row,col)
-      case "left-back" => matrix.moveRightL(row,col)
+      case "left-back" => matrix.moveLeftL(row,col)
     }
   }
 

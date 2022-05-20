@@ -41,7 +41,7 @@ case class Matrix(
   def rightMovePossibleL(row: Int, col: Int): Boolean =
     !(col + 1 > cells - 1 || row - 1 < 0) && !(data(row - 1)(col + 1) != 0)
   def rightMovePossibleU(row: Int, col: Int): Boolean =
-    !(col - 1 < 0 || row + 1 > cells - 1) && !(data(col - 1)(row + 1) != 0)
+    !(col - 1 < 0 || row + 1 > cells - 1) && !(data(row+ 1)(col- 1) != 0)
   def leftMovePossibleL(row: Int, col: Int): Boolean =
     !(col - 1 < 0 || row - 1 < 0) && !(data(row - 1)(col - 1) != 0)
   def leftMovePossibleU(row: Int, col: Int): Boolean =
