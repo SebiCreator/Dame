@@ -1,8 +1,8 @@
 package de.htwg.se.dame.model
 
-object BoardCreator {
+object Board{
 
-  def createBoard(name: String) = {
+  def apply(name: String) = {
     name match {
       case "international" => fullBoardWrapped2(2, 5, "X")
       case "standard"      => fullBoardWrapped2(2, 4, "X")
