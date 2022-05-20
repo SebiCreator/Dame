@@ -28,7 +28,6 @@ private class Farmer_Figure extends Figure {
   ) = {
     player match {
       case "Player1" => command_upper(matrix, command, row, col)
-
       case "Player2" => command_lower(matrix, command, row, col)
     }
 
@@ -42,7 +41,6 @@ private class Farmer_Figure extends Figure {
   ) = {
     command match {
       case "right" => matrix.moveRightU(row, col)
-
       case "left" => matrix.moveLeftU(row, col)
     }
   }
@@ -55,7 +53,6 @@ private class Farmer_Figure extends Figure {
   ) = {
     command match {
       case "right" => matrix.moveRightL(row, col)
-
       case "left" => matrix.moveLeftL(row, col)
     }
   }
@@ -71,7 +68,6 @@ private class Dame_Figure extends Figure {
   ) = {
     player match {
       case "Player1" => command_upper(matrix, command, row, col)
-
       case "Player2" => command_lower(matrix, command, row, col)
     }
 
@@ -84,10 +80,10 @@ private class Dame_Figure extends Figure {
       col: Int
   ) = {
     command match {
-      case "right" => matrix.moveLeftU(row, col)
-
-      case "left" => matrix.moveRightU(row, col)
-
+      case "right" => matrix.moveRightU(row, col)
+      case "left" => matrix.moveLeftU(row, col)
+      case "right-back" => matrix.moveRightL(row,col)
+      case "left-back" => matrix.moveRightL(row,col)
     }
   }
 
@@ -99,8 +95,9 @@ private class Dame_Figure extends Figure {
   ) = {
     command match {
       case "right" => matrix.moveRightL(row, col)
-
       case "left" => matrix.moveLeftL(row, col)
+      case "right-back" => matrix.moveLeftU(row,col)
+      case "left-back" => matrix.moveRightU(row,col)
 
     }
   }

@@ -45,9 +45,7 @@ case class Matrix(
   def leftMovePossibleL(row: Int, col: Int): Boolean =
     !(col - 1 < 0 || row - 1 < 0) && !(data(row - 1)(col - 1) != 0)
   def leftMovePossibleU(row: Int, col: Int): Boolean =
-    !(col + 1 > cells - 1 || row + 1 > cells - 1) && !(data(row + 1)(
-      col + 1
-    ) != 0)
+    !(col + 1 > cells - 1 || row + 1 > cells - 1) && !(data(row + 1)(col+1) != 0)
 
   def movePossible(pos: String, direction: String,row: Int, col: Int) : Boolean =  {
     pos match {
@@ -97,9 +95,8 @@ case class Matrix(
   def moveRightU(row: Int, col: Int): Matrix = {
     val dcol = col - 1
     val drow = row + 1
-    if(!leftMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
+    if(!rightMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
   }
-
 }

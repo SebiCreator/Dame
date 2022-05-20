@@ -26,7 +26,15 @@ object Dame {
 */
 
 @main def hello: Unit =
-  val x = 1
+  val f1 = Figure("Dame")
+  val m1 = Matrix().initFill()
+  val m2 = f1.command(m1,"left","Player2",4,2) 
+  val m3 = f1.command(m2,"right","Player1",1,3)
+  val m4 = f1.command(m3,"left","Player1",2,2)
+  //val m4 = m3.moveLeftU(2,2)
+
+  m4.data.foreach(println)
+
   
 
 
