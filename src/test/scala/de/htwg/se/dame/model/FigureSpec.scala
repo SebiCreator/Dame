@@ -20,6 +20,10 @@ class FigureSpec extends AnyWordSpec {
         matrix.moveRightU(2, 2)
       )
 
+      farmer.command(matrix,"left","Player1",1,2) should be(
+        matrix.moveLeftU(1,2)
+      )
+
 
       farmer.command(matrix, "left", "Player2", 3, 3) should be(
         matrix.moveLeftL(3, 3)

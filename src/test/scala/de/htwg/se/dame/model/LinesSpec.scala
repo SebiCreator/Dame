@@ -105,7 +105,7 @@ class LinesSpec extends AnyWordSpec {
     List((0,0),(1,1))
   )) should be ("|OXOX|\n|OXOX|\n|OXOX|\n|OXOX|\n")
 
-  modBoardWrapped(1,2,List(
+    modBoardWrapped(1,2,List(
     List((1,1),(2,2)),
     List((0,0),(1,1)),
     List((0,0),(1,1)),
