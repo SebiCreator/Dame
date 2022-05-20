@@ -126,7 +126,7 @@ class MatrixSpec extends AnyWordSpec with Matchers {
   ) should {
     val m = Matrix().initFill()
     m.movePossible("upper","left",1,1) should be (true)
-    m.movePossible("upper","right",1,1) should be (false)
+    m.movePossible("upper","right",1,1) should be (true)
     m.movePossible("lower","right",4,2) should be (true)
     m.movePossible("lower","left",4,1) should be (true)
   }
