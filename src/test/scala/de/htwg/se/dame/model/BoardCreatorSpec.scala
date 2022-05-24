@@ -7,20 +7,22 @@ class BoardCreatorSpec extends AnyWordSpec {
   formatHead("A Board") when {
     "international" should {
       Board("international") should be(
-        fullBoardWrapped2(2, 5, "X")
+       Matrix(Nil,10,Player1("A"),Player2("B")).initFill()
       )
     }
     "standard" should {
       Board("standard") should be(
-        fullBoardWrapped2(2, 4, "X")
+        Matrix(Nil,8,Player1("A"),Player2("B")).initFill()
       )
     }
     "dev" should {
-      Board("dev") should be(fullBoardWrapped2(2, 3, "X"))
+      Board("dev") should be (
+        Matrix(Nil,6,Player1("A"),Player2("B")).initFill()
+      )
     }
     "default" should {
       Board("default") should be(
-        fullBoardWrapped2(2, 3, "X")
+        Matrix(Nil,6,Player1("A"),Player2("B")).initFill() 
       )
     }
   }

@@ -5,20 +5,45 @@ import scala.compiletime.ops.boolean
 case class Matrix(
     data: List[List[Int]] = Nil,
     cells: Int = 6,
-    player1: String = "O",
-    player2: String = "X"
+    player1: Player= Player1("A"),
+    player2: Player= Player2("B")
 ) {
 
+  def initFill1(n: Int) = {
+    val r = 0 to cells
+    val a = List.tabulate(cells/2)(_ => (0,n))
+    a.flatMap(_.toList).toList
+  }
+
+  def initFill2(n: Int) = {
+    val r = 0 to cells
+    val a = List.tabulate(cells/2)(_ => (n,0))
+    a.flatMap(_.toList).toList 
+  }
+
   def initFill(): Matrix = {
-    val p1 = List.tabulate(cells * 2)(_ => 1)
-    val p2 = List.tabulate(cells * 2)(_ => 2)
-    val e = List.tabulate(Math.pow(cells, 2).toInt - (cells * 4))(_ => 0)
-    val c = p1 ++ e ++ p2
-    Matrix((c grouped cells).toList)
+    val e = (List.tabulate(cells*2)(_ => 0).toList grouped cells).toList
+    val it = (cells-2) / 2
+    val res1 = for{
+      x <- 0 to (it/2) - 1
+    }yield(initFill1(1),initFill2(1))
+
+    val res2 = for{
+      x <- 0 to (it/2) -1
+    }yield(initFill1(2),initFill2(2))
+
+    
+    val res3 = res1.flatMap(_.toList).toList
+    val res4 = res2.flatMap(_.toList).toList
+
+    Matrix(res3 ++ e ++ res4)
+
+    //val res2 = (res.flatMap(_.toList) grouped cells).flatMap(_.toList).toList
+    //Matrix(res2.updated(it,e).updated(it+1,e))
   }
 
   def numToPlayer(num: Int): String = {
-    if (num == 1) player1 else if (num == 2) player2 else " "
+    if (num == 1) player1.toString else if (num == 2) player2.toString else " "
   }
 
   def tup(): List[List[(String, String)]] = {

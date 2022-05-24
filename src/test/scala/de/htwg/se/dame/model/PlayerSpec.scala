@@ -6,18 +6,23 @@ import org.scalatest.matchers.should.Matchers._
 class PlayerSpec extends AnyWordSpec {
   formatHead("A Person") when {
     "is a Player" should {
-      val player = new Player("John Doe")
+      val player1 = new Player1("John Doe")
       "have a name" in {
-        player.name should be("John Doe")
+        player1.name should be("John Doe")
       }
       "have a String representation" in {
-        player.toString should be("John Doe")
+        player1.toString should be("X")
       }
-      "have a counting winningStreak" in {
-        player.wins should be(0)
+      
+
+
+      val name ="John Doe" 
+      val player2 = new Player2(name)
+      "havei a name" in {
+        player2.name should be("John Doe")
       }
-      "which will increase at each win" in {
-        player.increaseWinningStreak().wins should be(1)
+      "havei a String representation" in {
+        player2.toString should be("X")
       }
     }
   }

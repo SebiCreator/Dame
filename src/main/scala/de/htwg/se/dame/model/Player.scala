@@ -1,17 +1,20 @@
 package de.htwg.se.dame.model
 
-trait Person {
-  val name = ""
+
+class Player(name: String="X") {
+  val isPlaying = true
   override def toString: String = name
 }
 
-case class Player(override val name: String, wins: Int = 0) extends Person {
-  val isPlaying = true
-  val numberOfFigures = 0
-  def increaseWinningStreak() = new Player(name, wins + 1)
+case class Player1(name: String="A") extends Player {
+  val symbol = "X"
 }
-case class Spectator(override val name: String) extends Person {
-  val isPlaying = false
+
+case class Player2(name: String="B") extends Player {
+  val symbol = "O"
+}
+case class Spectator(name: String) extends Player{
+  override val isPlaying = false
 }
 
 object PersonFactory {

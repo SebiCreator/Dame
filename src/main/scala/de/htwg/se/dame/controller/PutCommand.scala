@@ -1,6 +1,5 @@
-/*
 package de.htwg.se.dame
-
+/*
 import de.htwg.se.dame.model.Matrix
 import de.htwg.se.dame.util.Command
 import de.htwg.se.dame.model.BoardCreator
@@ -13,4 +12,4 @@ class PutCommand(matrix: Matrix) extends Command[Matrix]:
     matrix.movePossible(...)
   override def redoStep(matrix: Matrix): Matrix =
     matrix.movePossible(...)
- */
+    */

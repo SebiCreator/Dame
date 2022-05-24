@@ -42,7 +42,7 @@ class Tui(var controller: Controller) extends Observer {
 
       case "new" =>
         println("Starting a new game ...")
-        controller.startGame(3, 8)
+        controller.startGame()
 
         return 0
 
@@ -54,7 +54,7 @@ class Tui(var controller: Controller) extends Observer {
         var nFields = readLine().toInt
 
         println("Starting a new game ...")
-        controller.startGame(cellsize, nFields)
+        controller.startGame()
         return 1
 
       case "load" => /* load a savegame */

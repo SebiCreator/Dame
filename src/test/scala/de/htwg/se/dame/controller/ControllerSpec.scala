@@ -5,13 +5,13 @@ import org.scalatest.wordspec.AnyWordSpec
 import de.htwg.se.dame.controller.Controller
 import de.htwg.se.dame.model.Matrix
 import de.htwg.se.dame.util.Observer
+import de.htwg.se.dame.model.Board
 
 class ControllerSpec extends AnyWordSpec {
   "The Controller" should {
-    val controller = Controller(new Matrix(Nil, 8, "X", "O"))
-    "Fill the initial GameBoard with the Backend Matrix" in {
-      controller.initFill("#")
-
+    val controller = Controller(new Matrix(Nil, 8))
+    "Start Game should create a new Board with Players in place" in {
+     controller.startGame() should be (Board()) 
     }
     "notify its observers on change" in {
       class TestObserver(controller: Controller) extends Observer:
