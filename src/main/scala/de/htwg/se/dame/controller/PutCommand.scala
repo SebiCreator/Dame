@@ -5,7 +5,7 @@ import de.htwg.se.dame.model.Matrix
 import de.htwg.se.dame.util.Command
 import de.htwg.se.dame.model.BoardCreator
 
-class PutCommand(matrix: Matrix) extends Command[BoardCreator]:
+class PutCommand(matrix: Matrix) extends Command[Matrix]:
   override def noStep(matrix: Matrix): Matrix = matrix
   override def doStep(matrix: Matrix): Matrix =
     matrix.movePossible(...)
