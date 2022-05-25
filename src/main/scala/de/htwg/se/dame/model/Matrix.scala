@@ -6,7 +6,8 @@ case class Matrix(
     data: List[List[Int]] = Nil,
     cells: Int = 6,
     player1: Player= Player1("A"),
-    player2: Player= Player2("B")
+    player2: Player= Player2("B"),
+    player: Int = 1
 ) {
 
   def initFill1(n: Int) = {
@@ -63,6 +64,36 @@ case class Matrix(
     data(row)(col) == 0
   }
 
+  def whichFigure(row: Int, col: Int) : String = {
+    val f = data(row)(col)
+    f match {
+      case 0 => "leer"
+      case 1 => "farmer"
+      case 2 => "farmer"
+      case 3 => "dame"
+      case 4 => "dame"
+    }
+  }
+
+  def move(direction: String,row: Int, col: Int) = {
+    val figure = whichFigure(row,col) 
+    Dame_Figure(this,direction,getPlayer(),row,col)
+  }
+
+  def changePlayer() = {
+    player match{
+      case 1 => Matrix(data,cells,player1,player2,2)
+      case 2 => Matrix(data,cells,player1,player2,1)
+    }
+  }
+
+  def getPlayer(): String =  {
+    player match {
+      case 1 => "Player1"
+      case 2 => "Player2"
+    }
+  }
+
   def rightMovePossibleL(row: Int, col: Int): Boolean =
     !(col + 1 > cells - 1 || row - 1 < 0) && !(data(row - 1)(col + 1) != 0)
   def rightMovePossibleU(row: Int, col: Int): Boolean =
@@ -98,7 +129,7 @@ case class Matrix(
     val drow = row - 1
     if(!leftMovePossibleL(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
   }
 
   def moveLeftU(row: Int, col: Int): Matrix = {
@@ -106,7 +137,7 @@ case class Matrix(
     val drow = row + 1
     if(!leftMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
   }
 
   def moveRightL(row: Int, col: Int): Matrix = {
@@ -114,7 +145,7 @@ case class Matrix(
     val drow = row - 1
     if(!rightMovePossibleL(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
   }
 
   def moveRightU(row: Int, col: Int): Matrix = {
@@ -122,6 +153,6 @@ case class Matrix(
     val drow = row + 1
     if(!rightMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0)
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
   }
 }

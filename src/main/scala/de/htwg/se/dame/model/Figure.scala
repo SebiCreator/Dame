@@ -6,7 +6,7 @@ The figure based on the FactoryMethod-Pattern
 
 trait Figure {
   val onBoard = true
-  def command(
+  def apply(
       matrix: Matrix,
       command: String,
       player: String,
@@ -18,8 +18,8 @@ trait Figure {
 
 }
 
-private class Farmer_Figure extends Figure {
-  override def command(
+object Farmer_Figure extends Figure {
+  override def apply(
       matrix: Matrix,
       command: String,
       player: String,
@@ -58,8 +58,8 @@ private class Farmer_Figure extends Figure {
   }
 }
 
-private class Dame_Figure extends Figure {
-  override def command(
+object Dame_Figure extends Figure {
+  override def apply(
       matrix: Matrix,
       command: String,
       player: String,
@@ -103,9 +103,4 @@ private class Dame_Figure extends Figure {
   }
 }
 
-object Figure {
-  def apply(kind: String) = kind match {
-    case "Dame"   => new Dame_Figure()
-    case "Farmer" => new Farmer_Figure()
-  }
-}
+

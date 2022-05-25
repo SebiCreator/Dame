@@ -3,6 +3,8 @@ package de.htwg.se.dame.model
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers._
 
+/*
+
 class FigureSpec extends AnyWordSpec {
   formatHead("A Farmer") when {
     "created" should {
@@ -50,3 +52,4 @@ class FigureSpec extends AnyWordSpec {
 
   }
 }
+  */

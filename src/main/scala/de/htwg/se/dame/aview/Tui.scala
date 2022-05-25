@@ -3,6 +3,7 @@ package de.htwg.se.dame.aview
 import scala.io.StdIn.readLine
 import de.htwg.se.dame.controller.Controller
 import de.htwg.se.dame.util.Observer
+import de.htwg.se.dame.model.Matrix
 
 class Tui(var controller: Controller) extends Observer {
   controller.add(this)
@@ -34,17 +35,17 @@ class Tui(var controller: Controller) extends Observer {
         hMessageFormat("help", "to get this HelpBoard")
     )
 
-  def processInputLine(input: String): Integer = {
+  def processInputLine(): Unit= {
+    val input = readLine().toString
     input match {
       case "quit" =>
         System.exit(0)
-        return -1
 
       case "new" =>
         println("Starting a new game ...")
-        controller.startGame()
 
-        return 0
+        controller = controller.doAndNotify(controller.startGame)
+
 
       case "custom" => /* new Board with user sizes*/
         println("Enter your prefered cellsize ")
@@ -54,20 +55,40 @@ class Tui(var controller: Controller) extends Observer {
         var nFields = readLine().toInt
 
         println("Starting a new game ...")
-        controller.startGame()
-        return 1
 
       case "load" => /* load a savegame */
         println("Loading last save ...")
-        return 2
 
       case "save" => /* save current game*/
         println("Current game has been saved ...")
-        return 3
 
       case "help" =>
         helpMessage()
-        return 4
+      
+      case "move" => 
+        var p = controller.getMatrix().player 
+        println("Which direction (player" + p + ")")
+        val dir = readLine().toString
+        println("Row")
+        val row = readLine().toInt
+        println("Col")
+        val col= readLine().toInt
+        val a = analyse(dir,row,col)
+        a match {
+          case Some(n) => controller.doAndNotify()
+        }
+    }
+    processInputLine()
+  }
+
+  
+
+  def analyse(dir: String, row: Int, col: Int): Option[Matrix] = {
+    val m = controller.getMatrix()
+    val n = m.move(dir,row,col)
+    n match {
+      case Matrix(Nil,m.cells,player1,player2,player) => None
+      case _ => Some(n)
     }
   }
 
