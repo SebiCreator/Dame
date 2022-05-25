@@ -5,11 +5,13 @@ import de.htwg.se.dame.controller.Controller
 import de.htwg.se.dame.util.Observer
 import de.htwg.se.dame.model.Matrix
 
+var eol = sys.props("line.separator")
+
 class Tui(var controller: Controller) extends Observer {
   controller.add(this)
 
-  override def update: Unit =
-    print(controller.field)
+  override def update = println("Hi")
+
 
   def welcomeMessage() =
   println("     __          __  _                            _          _____                                  ")
@@ -36,48 +38,38 @@ class Tui(var controller: Controller) extends Observer {
     )
 
   def processInputLine(): Unit= {
+    println(eol + "Bitte Befehl eingeben")
     val input = readLine().toString
     input match {
       case "quit" =>
-        System.exit(0)
-
+        return
       case "new" =>
         println("Starting a new game ...")
-
-        controller = controller.doAndNotify(controller.startGame)
-
-
-      case "custom" => /* new Board with user sizes*/
-        println("Enter your prefered cellsize ")
-        var cellsize = readLine().toInt
-
-        println("How many cells do you want to have ?")
-        var nFields = readLine().toInt
-
+        controller = controller.startGame()
+      case "custom" => 
+        println("Do you want international or standart or dev?")
+        var version = readLine()
         println("Starting a new game ...")
-
-      case "load" => /* load a savegame */
+        controller.startGame(version)
+      case "load" => 
         println("Loading last save ...")
-
-      case "save" => /* save current game*/
+      case "save" => 
         println("Current game has been saved ...")
-
       case "help" =>
         helpMessage()
-      
       case "move" => 
-        var p = controller.getMatrix().player 
-        println("Which direction (player" + p + ")")
-        val dir = readLine().toString
-        println("Row")
-        val row = readLine().toInt
-        println("Col")
-        val col= readLine().toInt
-        val a = analyse(dir,row,col)
-        a match {
-          case Some(n) => controller.doAndNotify()
-        }
+        println(controller.currentPlayer() + " is in turn")
+        println("In which direction would you like to move?")
+        var dir = readLine()
+        println("Which row do you choose?")
+        var row = readLine().toInt
+        println("Which column do you choose?")
+        var col = readLine().toInt
+        controller.play(dir,row,col)
+      case show => println("------------")
+      case _ => println("Wrong input please try again")
     }
+    controller.niceGame()
     processInputLine()
   }
 
@@ -85,11 +77,15 @@ class Tui(var controller: Controller) extends Observer {
 
   def analyse(dir: String, row: Int, col: Int): Option[Matrix] = {
     val m = controller.getMatrix()
-    val n = m.move(dir,row,col)
-    n match {
-      case Matrix(Nil,m.cells,player1,player2,player) => None
-      case _ => Some(n)
+    m match {
+       case Some(s) => {
+          val n = s.move(dir,row,col)
+          n match {
+          case Matrix(Nil,s.cells,s.player1,s.player2,s.player) => None
+          case _ => Some(n)
+          }
+        }
+      case None => None
     }
   }
-
 }

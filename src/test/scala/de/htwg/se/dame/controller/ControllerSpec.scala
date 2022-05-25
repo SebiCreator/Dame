@@ -9,7 +9,7 @@ import de.htwg.se.dame.model.Board
 
 class ControllerSpec extends AnyWordSpec {
   "The Controller" should {
-    val controller = Controller(new Matrix(Nil, 8))
+    val controller = Controller(None)
     "Start Game should create a new Board with Players in place" in {
      controller.startGame() should be (Board()) 
     }

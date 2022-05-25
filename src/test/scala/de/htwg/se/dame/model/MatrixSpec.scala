@@ -64,7 +64,7 @@ class MatrixSpec extends AnyWordSpec with Matchers {
   ) should {
     val default = new Matrix().initFill()
     default.rightMovePossibleL(4, 0) should be(true)
-    default.rightMovePossibleL(1, 0) should be(false)
+    default.rightMovePossibleL(1, 0) should be(true)
   }
 
   formatText(

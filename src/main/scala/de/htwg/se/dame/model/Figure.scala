@@ -25,7 +25,7 @@ object Farmer_Figure extends Figure {
       player: String,
       row: Int,
       col: Int
-  ) = {
+  ): Matrix = {
     player match {
       case "Player1" => command_upper(matrix, command, row, col)
       case "Player2" => command_lower(matrix, command, row, col)
@@ -38,7 +38,7 @@ object Farmer_Figure extends Figure {
       command: String,
       row: Int,
       col: Int
-  ) = {
+  ): Matrix = {
     command match {
       case "right" => matrix.moveRightU(row, col)
       case "left" => matrix.moveLeftU(row, col)
@@ -50,7 +50,7 @@ object Farmer_Figure extends Figure {
       command: String,
       row: Int,
       col: Int
-  ) = {
+  ): Matrix = {
     command match {
       case "right" => matrix.moveRightL(row, col)
       case "left" => matrix.moveLeftL(row, col)
@@ -65,7 +65,7 @@ object Dame_Figure extends Figure {
       player: String,
       row: Int,
       col: Int
-  ) = {
+  ): Matrix = {
     player match {
       case "Player1" => command_upper(matrix, command, row, col)
       case "Player2" => command_lower(matrix, command, row, col)
@@ -78,7 +78,7 @@ object Dame_Figure extends Figure {
       command: String,
       row: Int,
       col: Int
-  ) = {
+  ): Matrix = {
     command match {
       case "right" => matrix.moveRightU(row, col)
       case "left" => matrix.moveLeftU(row, col)
@@ -92,13 +92,12 @@ object Dame_Figure extends Figure {
       command: String,
       row: Int,
       col: Int
-  ) = {
+  ): Matrix = {
     command match {
       case "right" => matrix.moveRightL(row, col)
       case "left" => matrix.moveLeftL(row, col)
       case "right-back" => matrix.moveLeftU(row,col)
       case "left-back" => matrix.moveRightU(row,col)
-
     }
   }
 }

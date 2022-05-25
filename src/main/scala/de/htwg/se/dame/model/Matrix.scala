@@ -75,7 +75,7 @@ case class Matrix(
     }
   }
 
-  def move(direction: String,row: Int, col: Int) = {
+  def move(direction: String,row: Int, col: Int): Matrix = {
     val figure = whichFigure(row,col) 
     Dame_Figure(this,direction,getPlayer(),row,col)
   }
@@ -95,13 +95,13 @@ case class Matrix(
   }
 
   def rightMovePossibleL(row: Int, col: Int): Boolean =
-    !(col + 1 > cells - 1 || row - 1 < 0) && !(data(row - 1)(col + 1) != 0)
+    !(col + 1 > cells - 1 || row - 1 < 0)
   def rightMovePossibleU(row: Int, col: Int): Boolean =
-    !(col - 1 < 0 || row + 1 > cells - 1) && !(data(row+ 1)(col- 1) != 0)
+    !(col - 1 < 0 || row + 1 > cells - 1)
   def leftMovePossibleL(row: Int, col: Int): Boolean =
-    !(col - 1 < 0 || row - 1 < 0) && !(data(row - 1)(col - 1) != 0)
+    !(col - 1 < 0 || row - 1 < 0)
   def leftMovePossibleU(row: Int, col: Int): Boolean =
-    !(col + 1 > cells - 1 || row + 1 > cells - 1) && !(data(row + 1)(col+1) != 0)
+    !(col + 1 > cells - 1 || row + 1 > cells - 1) 
 
   def movePossible(pos: String, direction: String,row: Int, col: Int) : Boolean =  {
     pos match {

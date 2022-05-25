@@ -18,7 +18,7 @@ import java.awt.Dimension
 
 @main def hello: Unit = {
   val m = Matrix()
-  val controller = Controller(m)
+  val controller = Controller(None).startGame()
   val tui = Tui(controller)
   val a = tui.processInputLine() 
   
