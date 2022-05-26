@@ -77,7 +77,12 @@ case class Matrix(
 
   def move(direction: String,row: Int, col: Int): Matrix = {
     val figure = whichFigure(row,col) 
-    Dame_Figure(this,direction,getPlayer(),row,col)
+    figure match {
+      case "leer" => Farmer_Figure(this,direction,getPlayer(),row,col)
+      case "farmer" => Farmer_Figure(this,direction,getPlayer(),row,col)
+      case "dame" => Dame_Figure(this,direction,getPlayer(),row,col)
+    }
+    
   }
 
   def changePlayer() = {
@@ -155,4 +160,64 @@ case class Matrix(
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
   }
+
+  def rightKillPossibleU(row: Int, col: Int): Boolean = {
+    if(!cellIsEmpty(row+2,col-2)) return false
+    if(cellIsEmpty(row+1,col-1)) return false
+    if(row+2 > cells-1) return false
+    if(col-2 < 0) return false
+    return true
+  }
+
+  def leftKillPossilbeU(row: Int, col: Int): Boolean = {
+    if(!cellIsEmpty(row+2,col+2)) return false
+    if(cellIsEmpty(row+1,col+1)) return false
+    if(row+2 > cells-1) return false
+    if(col+2 > cells-1) return false
+    return true
+  }
+
+  def rightKillPossibleL(row: Int, col: Int): Boolean = {
+    if(!cellIsEmpty(row-2,col+2)) return false
+    if (cellIsEmpty(row-1,col+1)) return false
+    if(row-2 < 0) return false
+    if(col+2 > cells-1) return false
+    return true
+  }
+
+  def leftKillPossilbeL(row: Int, col: Int): Boolean = {
+    if(!cellIsEmpty(row-2,col-2)) return false
+    if(cellIsEmpty(row-1,col-1)) return false
+    if(row-2 < 0) return false
+    if(col-2 < 0) return false
+    return true
+  }
+
+
+
+
+  def killRightU(row: Int, col: Int): Matrix = {
+    if (!rightKillPossibleU(row,col) || cellIsEmpty(row,col)) return Matrix(Nil)
+    val sym = data(row)(col)
+    replaceCell(row,col,0).replaceCell(row+1,col-1,0).replaceCell(row+2,col-2,sym).changePlayer()
+  }
+
+  def killLeftU(row: Int, col: Int): Matrix = {
+    if (!leftKillPossilbeU(row,col) || cellIsEmpty(row,col)) return Matrix(Nil)
+    val sym = data(row)(col)
+    replaceCell(row,col,0).replaceCell(row+1,col+1,0).replaceCell(row+2,col+2,sym).changePlayer()
+  }
+
+  def killRightL(row: Int, col: Int): Matrix = {
+    if(!rightKillPossibleL(row,col) || cellIsEmpty(row,col)) return Matrix(Nil)
+    val sym = data(row)(col)
+    replaceCell(row,col,0).replaceCell(row-1,col+1,0).replaceCell(row-2,col+2,sym).changePlayer()
+  }
+
+  def killLeftL(row: Int, col: Int): Matrix = {
+    if(!leftKillPossilbeL(row,col) || cellIsEmpty(row,col)) return Matrix(Nil)
+    val sym = data(row)(col)
+    replaceCell(row,col,0).replaceCell(row-1,col-1,0).replaceCell(row-2,col-2,sym).changePlayer()
+  }
+
 }

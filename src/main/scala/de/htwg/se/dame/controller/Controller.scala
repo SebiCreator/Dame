@@ -23,20 +23,19 @@ class Controller(var matrix: Option[Matrix]) extends Observable {
     }
   }
 
-
-
-    
   def play(dir: String, row: Int, col: Int): Unit= {
     val a = playtest(dir,row,col)
     a match {
       case Success(s) => matrix = Some(s)
       case Failure(s) => 
     }
+    notifyObservers
   }
 
   def currentPlayer(): String= {
     matrix match {
       case Some(m) => m.getPlayer()
+      case None => "NoPlayer"
     }
   }
     
@@ -44,14 +43,15 @@ class Controller(var matrix: Option[Matrix]) extends Observable {
     Try(
     matrix  match {
       case Some(m) => m.move(dir,row,col)
+      case None => throw new NoSuchElementException
     }
     )
   }
 
 
-
-  def startGame(boardname: String="dev", name1 : String="A",name2 : String="B"):Controller= {
-      Controller(Some(Board(boardname,name1,name2)))
+  def startGame(boardname: String="dev", name1 : String="A",name2 : String="B"): Unit= {
+      matrix = Some(Board(boardname,name1,name2))
+      notifyObservers
   }
 
 

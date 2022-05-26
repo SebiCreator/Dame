@@ -10,9 +10,6 @@ var eol = sys.props("line.separator")
 class Tui(var controller: Controller) extends Observer {
   controller.add(this)
 
-  override def update = println("Hi")
-
-
   def welcomeMessage() =
   println("     __          __  _                            _          _____                                  ")
   println("     \\ \\        / / | |                          | |        |  __ \\                              ")
@@ -44,10 +41,10 @@ class Tui(var controller: Controller) extends Observer {
       case "quit" =>
         return
       case "new" =>
-        println("Starting a new game ...")
-        controller = controller.startGame()
+        println(eol + "Starting a new game ...")
+        controller.startGame()
       case "custom" => 
-        println("Do you want international or standart or dev?")
+        println(eol + "Do you want international or standart or dev?")
         var version = readLine()
         println("Starting a new game ...")
         controller.startGame(version)
@@ -58,34 +55,22 @@ class Tui(var controller: Controller) extends Observer {
       case "help" =>
         helpMessage()
       case "move" => 
-        println(controller.currentPlayer() + " is in turn")
+        println(eol + "----  " + controller.currentPlayer() + " is in turn  ----")
         println("In which direction would you like to move?")
         var dir = readLine()
-        println("Which row do you choose?")
+        println(eol + "Which row do you choose?")
         var row = readLine().toInt
-        println("Which column do you choose?")
+        println(eol + "Which column do you choose?")
         var col = readLine().toInt
         controller.play(dir,row,col)
-      case show => println("------------")
-      case _ => println("Wrong input please try again")
+      case show => update
+      case _ => println(eol + "Wrong input please try again")
     }
-    controller.niceGame()
     processInputLine()
   }
 
   
 
-  def analyse(dir: String, row: Int, col: Int): Option[Matrix] = {
-    val m = controller.getMatrix()
-    m match {
-       case Some(s) => {
-          val n = s.move(dir,row,col)
-          n match {
-          case Matrix(Nil,s.cells,s.player1,s.player2,s.player) => None
-          case _ => Some(n)
-          }
-        }
-      case None => None
-    }
-  }
+
+  override def update = controller.niceGame()
 }

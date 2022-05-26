@@ -42,6 +42,8 @@ object Farmer_Figure extends Figure {
     command match {
       case "right" => matrix.moveRightU(row, col)
       case "left" => matrix.moveLeftU(row, col)
+      case "right-kill" => matrix.killRightU(row,col)
+      case "left-kill" => matrix.killLeftU(row,col)
     }
   }
 
@@ -54,6 +56,8 @@ object Farmer_Figure extends Figure {
     command match {
       case "right" => matrix.moveRightL(row, col)
       case "left" => matrix.moveLeftL(row, col)
+      case "right-kill" => matrix.killRightL(row,col)
+      case "left-kill" => matrix.killLeftL(row,col)
     }
   }
 }
@@ -83,7 +87,11 @@ object Dame_Figure extends Figure {
       case "right" => matrix.moveRightU(row, col)
       case "left" => matrix.moveLeftU(row, col)
       case "right-back" => matrix.moveRightL(row,col)
-      case "left-back" => matrix.moveLeftL(row,col)
+      case "left-back" => matrix.moveLeftL(row,col) 
+      case "right-kill" => matrix.killRightU(row,col)
+      case "left-kill" => matrix.killLeftU(row,col)
+      case "left-back-kill" => matrix.killLeftL(row,col)
+      case "right-back-kill" => matrix.killRightL(row,col)
     }
   }
 
@@ -98,6 +106,10 @@ object Dame_Figure extends Figure {
       case "left" => matrix.moveLeftL(row, col)
       case "right-back" => matrix.moveLeftU(row,col)
       case "left-back" => matrix.moveRightU(row,col)
+      case "right-kill" => matrix.killRightL(row,col)
+      case "left-kill" => matrix.killLeftL(row,col)
+      case "left-back-kill" => matrix.killLeftU(row,col)
+      case "right-back-kill" => matrix.killRightU(row,col)
     }
   }
 }
