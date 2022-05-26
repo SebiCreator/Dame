@@ -72,26 +72,26 @@ def fullBoardWrapped2(cellsize: Int, nFields: Int, symbol: String) = limitWrap(
 
 //Modified
 //def to2Tuple(entrys: List[String]) = entrys.map()
-def modLine(cellsize: Int, symbols: List[(Int, Int)]) =
+def modLine(cellsize: Int, symbols: List[(String,String)]) =
   "|" + symbols
     .map((a, b) => innerBCell(cellsize, "O") + innerWCell(cellsize, "X"))
     .mkString("") + "|" + eol
+
 def modBlock(
     cellsize: Int,
     nFields: Int,
-    symbols: List[(Int, Int)]
+    symbols: List[(String,String)]
 ) =
-  (bLine(cellsize, nFields * 4) * (cellsize / 2).toInt) + modLine(
-    cellsize,
-    symbols
-  ) + (bLine(cellsize, nFields * 4) * (cellsize / 2).toInt)
+  (bLine(cellsize, nFields * 4) * (cellsize / 2).toInt) + modLine(cellsize, symbols) + (bLine(cellsize, nFields * 4) * (cellsize / 2).toInt)
+
 def modBoard(
     cellsize: Int,
     nFields: Int,
-    symbols: List[List[(Int, Int)]]
+    symbols: List[List[(String,String)]]
 ) = symbols.map(l => modBlock(cellsize, nFields / 2, l)).mkString("")
+
 def modBoardWrapped(
     cellsize: Int,
     nFields: Int,
-    symbols: List[List[(Int, Int)]]
+    symbols: List[List[(String,String)]]
 ) = limitWrap(cellsize * 2, nFields, modBoard(cellsize, nFields, symbols))

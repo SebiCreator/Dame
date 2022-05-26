@@ -92,6 +92,22 @@ case class Matrix(
     }
   }
 
+  def checkDameU(): Matrix = {
+    val pIdx = data(0).indexWhere(_ == 2) 
+    pIdx match {
+      case -1 => this
+      case _ => replaceCell(0,pIdx,4)
+    }
+  }
+
+  def checkDameL(): Matrix = {
+    val pIdx = data(cells-1).indexWhere(_ == 1)
+    pIdx match {
+      case -1 => this
+      case _ => replaceCell(cells-1,pIdx,3)
+    }
+  }
+
   def getPlayer(): String =  {
     player match {
       case 1 => "Player1"
@@ -134,7 +150,7 @@ case class Matrix(
     val drow = row - 1
     if(!leftMovePossibleL(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer().checkDameU()
   }
 
   def moveLeftU(row: Int, col: Int): Matrix = {
@@ -142,7 +158,7 @@ case class Matrix(
     val drow = row + 1
     if(!leftMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer().checkDameL()
   }
 
   def moveRightL(row: Int, col: Int): Matrix = {
@@ -150,7 +166,7 @@ case class Matrix(
     val drow = row - 1
     if(!rightMovePossibleL(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer().checkDameU()
   }
 
   def moveRightU(row: Int, col: Int): Matrix = {
@@ -158,7 +174,7 @@ case class Matrix(
     val drow = row + 1
     if(!rightMovePossibleU(row, col) || !cellIsEmpty(drow, dcol)) return Matrix(Nil)
     val sym = data(row)(col)
-    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer()
+    replaceCell(drow, dcol, sym).replaceCell(row, col, 0).changePlayer().checkDameL()
   }
 
   def rightKillPossibleU(row: Int, col: Int): Boolean = {
@@ -192,9 +208,6 @@ case class Matrix(
     if(col-2 < 0) return false
     return true
   }
-
-
-
 
   def killRightU(row: Int, col: Int): Matrix = {
     if (!rightKillPossibleU(row,col) || cellIsEmpty(row,col)) return Matrix(Nil)

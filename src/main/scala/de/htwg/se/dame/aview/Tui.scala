@@ -38,6 +38,8 @@ class Tui(var controller: Controller) extends Observer {
     println(eol + "Bitte Befehl eingeben")
     val input = readLine().toString
     input match {
+      case "undo" => controller.undo
+      case "redo" => controller.redo
       case "quit" =>
         return
       case "new" =>
@@ -72,5 +74,6 @@ class Tui(var controller: Controller) extends Observer {
   
 
 
-  override def update = controller.niceGame()
+  //override def update = controller.niceGame()
+  override def update = println(controller.getPrintData())
 }

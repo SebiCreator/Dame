@@ -3,16 +3,25 @@ package de.htwg.se.dame.controller
 import de.htwg.se.dame.util.{Observable, UndoManager}
 import de.htwg.se.dame.model.*
 import scala.Nothing
+import de.htwg.se.dame.util.*
 import scala.util.{Try,Success,Failure}
 
 class Controller(var matrix: Option[Matrix]) extends Observable {
-  val undoManager: UndoManager[Matrix] = new UndoManager
+  val undoManager: UndoManager = new UndoManager()
 
 
   def getMatrix(): Option[Matrix] = {
     matrix match {
       case Some(m) => Some(m)
       case None => None
+    }
+  }
+
+  def getPrintData(): String =  {
+    val m = getMatrix()
+    m match {
+      case None => ""
+      case Some(s) => modBoardWrapped(1,s.cells/2,s.tup())
     }
   }
 
@@ -48,19 +57,18 @@ class Controller(var matrix: Option[Matrix]) extends Observable {
     )
   }
 
-
   def startGame(boardname: String="dev", name1 : String="A",name2 : String="B"): Unit= {
       matrix = Some(Board(boardname,name1,name2))
       notifyObservers
   }
 
-
-
-
-
-
-  //def undo: Matrix = undoManager.undoStep(matrix)
-  //def redo: Matrix = undoManager.redoStep(matrix)
-
+  def undo: Unit={
+    undoManager.undoStep
+    notifyObservers
+  } 
+  def redo: Unit= {
+    undoManager.redoStep()
+    notifyObservers
+  }
 }
 

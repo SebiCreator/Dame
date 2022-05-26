@@ -17,11 +17,9 @@ import java.awt.Dimension
 
 
 @main def hello: Unit = {
-  val m = Matrix()
   val controller = Controller(None)
   val tui = Tui(controller)
   val a = tui.processInputLine() 
-  
 
 }
 
