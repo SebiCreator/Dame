@@ -15,7 +15,7 @@ class SwingGui extends Frame with Reactor:
   title = "HTWG-DAME"
 
   reactions += { case e =>
-    this.close()
+    //this.close()
   }
 
   menuBar = new MenuBar {
