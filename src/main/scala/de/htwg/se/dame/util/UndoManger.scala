@@ -1,30 +1,30 @@
 package de.htwg.se.dame.util
 
+import de.htwg.se.dame.model.Matrix
 
 class UndoManager:
-  private var undoStack: List[Command] = Nil
-  private var redoStack: List[Command] = Nil
+  private var undoStack: List[Matrix] = Nil
+  private var redoStack: List[Matrix] = Nil
 
-  def doStep(command: Command) =
-    undoStack = command :: undoStack
-    redoStack = Nil
-    command.doStep
+  def doStep(matrix: Matrix) =
+    undoStack = matrix :: undoStack
 
-  def undoStep =
+  def undoStep(matrix: Option[Matrix]): Option[Matrix] =
     undoStack match {
-      case Nil =>
+      case Nil => None
       case head :: stack => {
-          head.undoStep
-          undoStack = stack
-          redoStack= head :: redoStack
+        undoStack = stack
+        redoStack = matrix.get :: redoStack
+        Some(head)
       }
     }
-  def redoStep() =
+
+  def redoStep: Option[Matrix] =
     redoStack match {
-      case Nil =>
+      case Nil => None
       case head :: stack => {
-          head.redoStep
-          redoStack = stack
-          undoStack = head :: undoStack
+        redoStack = stack
+        undoStack = head :: undoStack
+        Some(head)
       }
     }
