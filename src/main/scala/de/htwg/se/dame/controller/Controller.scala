@@ -4,71 +4,83 @@ import de.htwg.se.dame.util.{Observable, UndoManager}
 import de.htwg.se.dame.model.*
 import scala.Nothing
 import de.htwg.se.dame.util.*
-import scala.util.{Try,Success,Failure}
+import scala.util.{Try, Success, Failure}
 
 class Controller(var matrix: Option[Matrix]) extends Observable {
   val undoManager: UndoManager = new UndoManager()
 
-
   def getMatrix(): Option[Matrix] = {
     matrix match {
       case Some(m) => Some(m)
-      case None => None
+      case None    => None
     }
   }
 
-  def getPrintData(): String =  {
+  def getPrintData(): String = {
     val m = getMatrix()
     m match {
-      case None => ""
-      case Some(s) => modBoardWrapped(1,s.cells/2,s.tup())
+      case None    => ""
+      case Some(s) => modBoardWrapped(1, s.cells / 2, s.tup())
     }
   }
 
   def niceGame(): Unit = {
     matrix match {
-      case Some(s) => s.data.foreach(println) 
-      case None => println("No Matrix")
+      case Some(s) => s.data.foreach(println)
+      case None    => println("No Matrix")
     }
   }
 
-  def play(dir: String, row: Int, col: Int): Unit= {
-    val a = playtest(dir,row,col)
+  def play(dir: String, row: Int, col: Int): Unit = {
+    val a = playtest(dir, row, col)
     a match {
       case Success(s) => matrix = Some(s)
-      case Failure(s) => 
+      case Failure(s) =>
     }
     notifyObservers
   }
 
-  def currentPlayer(): String= {
+  def currentPlayer(): String = {
     matrix match {
       case Some(m) => m.getPlayer()
-      case None => "NoPlayer"
+      case None    => "NoPlayer"
     }
   }
-    
-  def playtest(dir: String, row: Int, col: Int): Try[Matrix]= {
+
+  def playtest(dir: String, row: Int, col: Int): Try[Matrix] = {
+    doStep
     Try(
-    matrix  match {
-      case Some(m) => m.move(dir,row,col)
-      case None => throw new NoSuchElementException
-    }
+      matrix match {
+        case Some(m) => m.move(dir, row, col)
+        case None    => throw new NoSuchElementException
+      }
     )
   }
 
-  def startGame(boardname: String="dev", name1 : String="A",name2 : String="B"): Unit= {
-      matrix = Some(Board(boardname,name1,name2))
-      notifyObservers
+  def startGame(
+      boardname: String = "dev",
+      name1: String = "A",
+      name2: String = "B"
+  ): Unit = {
+    matrix = Some(Board(boardname, name1, name2))
+    notifyObservers
   }
 
-  def undo: Unit={
-    undoManager.undoStep
+  def doStep: Unit = {
+    undoManager.doStep(matrix.get)
+  }
+
+  def undo: Unit = {
+    val undo = undoManager.undoStep(matrix)
+    if (undo.isDefined) matrix = undo
     notifyObservers
-  } 
-  def redo: Unit= {
-    undoManager.redoStep()
+
+  }
+
+  def redo: Unit = {
+    val redo = undoManager.redoStep
+    if (redo.isDefined) matrix = redo
     notifyObservers
   }
+
 }
-
