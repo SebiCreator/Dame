@@ -92,6 +92,7 @@ class LinesSpec extends AnyWordSpec {
         fullBoardWrapped2(5, 10, "X")
       }
   }
+  /*
 
   formatHead("Modified functions") should {
     modLine(2,List((1,1),(2,2))) should be ("|#O# X #O# X |\n")
@@ -115,4 +116,5 @@ class LinesSpec extends AnyWordSpec {
 
 
   }
+  */
 }
