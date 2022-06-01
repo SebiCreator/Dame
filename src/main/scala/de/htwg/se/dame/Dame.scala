@@ -1,38 +1,23 @@
 package de.htwg.se.dame
 
 import de.htwg.se.dame.aview.Tui
-import de.htwg.se.dame.controller.Controller
-import de.htwg.se.dame.model.Matrix
-import de.htwg.se.dame.model.*
+import de.htwg.se.dame.controllerComponent._
+import de.htwg.se.dame.controllerComponent.controllerBaseImpl.Controller
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.*
 
 import scala.io.StdIn.readLine
 
-/*
-object Dame {
-  val controller = new Controller(new Matrix)
-  val tui = new Tui(controller)
-  controller.notifyObservers
+import scala.swing._
+import scala.swing.event._
+import java.awt.Dimension
+import de.htwg.se.dame.aview.SwingGui
 
-  def main(args: Array[String]): Unit = {
-    var input: String = ""
-    tui.processInputLine("help")
+@main def hello: Unit = {
 
-    while (input != "quit") {
-      input = readLine()
-      tui.processInputLine(input)
-    }
-  }
+  val controller = Controller(None)
+  val tui = Tui(controller)
+  val a = tui.processInputLine()
+
+  // val gui = new SwingGui
+  // gui.mainMenu
 }
-*/
-
-@main def hello: Unit =
-  val x = 1
-  
-
-
-
-
-
-
-
-    

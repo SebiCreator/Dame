@@ -1,24 +1,38 @@
 package de.htwg.se.dame.aview
 
 import scala.io.StdIn.readLine
-import de.htwg.se.dame.controller.Controller
-import de.htwg.se.dame.util.Observer
 
-class Tui(var controller: Controller) extends Observer {
+import de.htwg.se.dame.controllerComponent._
+import de.htwg.se.dame.util.Observer
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Matrix
+
+var eol = sys.props("line.separator")
+
+class Tui(var controller: ControllerInterface) extends Observer {
   controller.add(this)
 
-  override def update: Unit =
-    print(controller.field)
-
   def welcomeMessage() =
-  println("     __          __  _                            _          _____                                  ")
-  println("     \\ \\        / / | |                          | |        |  __ \\                              ")
-  println("      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___         ")
-  println("       \\ \\/  \\/ / _ | |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | |  | |/ _` | '_ ` _ \\ / _ \\  ")
-  println("        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/         ")
-  println("         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| ")
-  println("                                                                                                    ")
-
+    println(
+      "     __          __  _                            _          _____                                  "
+    )
+  println(
+    "     \\ \\        / / | |                          | |        |  __ \\                              "
+  )
+  println(
+    "      \\ \\  /\\  / ___| | ___ ___  _ __ ___   ___  | |_ ___   | |  | | __ _ _ __ ___   ___         "
+  )
+  println(
+    "       \\ \\/  \\/ / _ | |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | |  | |/ _` | '_ ` _ \\ / _ \\  "
+  )
+  println(
+    "        \\  /\\  |  __| | (_| (_) | | | | | |  __/ | || (_) | | |__| | (_| | | | | | |  __/         "
+  )
+  println(
+    "         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_____/ \\__,_|_| |_| |_|\\___| "
+  )
+  println(
+    "                                                                                                    "
+  )
 
   def hMessageFormat(keyword: String, message: String) =
     "\n%2$s %1$s %2$s \t%3$s".format(keyword, "  ", message)
@@ -34,41 +48,45 @@ class Tui(var controller: Controller) extends Observer {
         hMessageFormat("help", "to get this HelpBoard")
     )
 
-  def processInputLine(input: String): Integer = {
+  def processInputLine(): Unit = {
+    println(eol + "Bitte Befehl eingeben")
+    val input = readLine().toString
     input match {
+      case "undo" => controller.undo
+      case "redo" => controller.redo
       case "quit" =>
-        System.exit(0)
-        return -1
-
+        return
       case "new" =>
+        println(eol + "Starting a new game ...")
+        controller.startGame()
+      case "custom" =>
+        println(eol + "Do you want international or standart or dev?")
+        var version = readLine()
         println("Starting a new game ...")
-        controller.startGame(3, 8)
-
-        return 0
-
-      case "custom" => /* new Board with user sizes*/
-        println("Enter your prefered cellsize ")
-        var cellsize = readLine().toInt
-
-        println("How many cells do you want to have ?")
-        var nFields = readLine().toInt
-
-        println("Starting a new game ...")
-        controller.startGame(cellsize, nFields)
-        return 1
-
-      case "load" => /* load a savegame */
+        controller.startGame(version)
+      case "load" =>
         println("Loading last save ...")
-        return 2
-
-      case "save" => /* save current game*/
+      case "save" =>
         println("Current game has been saved ...")
-        return 3
-
       case "help" =>
         helpMessage()
-        return 4
+      case "move" =>
+        println(
+          eol + "----  " + controller.currentPlayer() + " is in turn  ----"
+        )
+        println("In which direction would you like to move?")
+        var dir = readLine()
+        println(eol + "Which row do you choose?")
+        var row = readLine().toInt
+        println(eol + "Which column do you choose?")
+        var col = readLine().toInt
+        controller.play(dir, row, col)
+      case show => update
+      case null => println(eol + "Wrong input please try again")
     }
+    processInputLine()
   }
 
+  override def update = controller.niceGame()
+  // override def update = println(controller.getPrintData())
 }

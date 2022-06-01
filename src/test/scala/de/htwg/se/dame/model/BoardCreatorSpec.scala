@@ -6,21 +6,23 @@ import org.scalatest.matchers.should.Matchers._
 class BoardCreatorSpec extends AnyWordSpec {
   formatHead("A Board") when {
     "international" should {
-      BoardCreator("international") should be(
-        fullBoardWrapped2(2, 5, "X")
+      Board("international") should be(
+       Matrix(Nil,10,Player1("A"),Player2("B")).initFill()
       )
     }
     "standard" should {
-      BoardCreator("standard") should be(
-        fullBoardWrapped2(2, 4, "X")
+      Board("standard") should be(
+        Matrix(Nil,8,Player1("A"),Player2("B")).initFill()
       )
     }
     "dev" should {
-      BoardCreator("dev") should be(fullBoardWrapped2(2, 3, "X"))
+      Board("dev") should be (
+        Matrix(Nil,6,Player1("A"),Player2("B")).initFill()
+      )
     }
     "default" should {
-      BoardCreator("default") should be(
-        fullBoardWrapped2(2, 3, "X")
+      Board("default") should be(
+        Matrix(Nil,6,Player1("A"),Player2("B")).initFill() 
       )
     }
   }
