@@ -4,3 +4,4 @@
 .bsp
 .metals/
 **.vscode/**
+.bloop/*
