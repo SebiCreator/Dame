@@ -60,7 +60,7 @@ class Tui(var controller: ControllerInterface) extends Observer {
         println(eol + "Starting a new game ...")
         controller.startGame()
       case "custom" =>
-        println(eol + "Do you want international or standart or dev?")
+        println(eol + "Do you want international or standard or dev?")
         var version = readLine()
         println("Starting a new game ...")
         controller.startGame(version)
@@ -72,7 +72,7 @@ class Tui(var controller: ControllerInterface) extends Observer {
         helpMessage()
       case "move" =>
         println(
-          eol + "----  " + controller.currentPlayer() + " is in turn  ----"
+          eol + "----  " + controller.getName() + " is in turn  ----"
         )
         println("In which direction would you like to move?")
         var dir = readLine()

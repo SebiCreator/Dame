@@ -6,6 +6,8 @@ trait MatrixInterface {
 
   def getData(): List[List[Int]]
 
+  def getName_(): String
+
   def initFill1(n: Int): List[Int]
 
   def initFill2(n: Int): List[Int]
@@ -19,7 +21,8 @@ trait MatrixInterface {
   def replaceCell(row: Int, col: Int, symbol: Int): MatrixInterface
 
   def cellIsEmpty(row: Int, col: Int): Boolean
-  def whichFigure(row: Int, col: Int): String
+
+  def whichFigure(row: Int)(col: Int): String
 
   def move(direction: String, row: Int, col: Int): MatrixInterface
 

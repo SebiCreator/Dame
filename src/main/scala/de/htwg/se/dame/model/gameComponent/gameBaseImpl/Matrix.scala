@@ -18,7 +18,16 @@ case class Matrix(
     player: Int = 1
 ) extends MatrixInterface {
 
-  def getCells(): Int = this.cells
+  def getCells(): Int = {
+    this.data(1).size
+  }
+
+  def getName_(): String = {
+    player match {
+      case 1 => player1.toString
+      case 2 => player2.toString
+    }
+  }
 
   def getData(): List[List[Int]] = this.data
 
@@ -75,7 +84,7 @@ case class Matrix(
     data(row)(col) == 0
   }
 
-  def whichFigure(row: Int, col: Int): String = {
+  def whichFigure(row: Int)(col: Int): String = {
     val f = data(row)(col)
     f match {
       case 0 => "leer"
@@ -87,7 +96,7 @@ case class Matrix(
   }
 
   def move(direction: String, row: Int, col: Int): MatrixInterface = {
-    val figure = whichFigure(row, col)
+    val figure = whichFigure(row)(col)
     figure match {
       case "leer"   => Farmer_Figure(this, direction, getPlayer(), row, col)
       case "farmer" => Farmer_Figure(this, direction, getPlayer(), row, col)

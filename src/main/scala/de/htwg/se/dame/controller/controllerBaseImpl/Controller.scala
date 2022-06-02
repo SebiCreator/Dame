@@ -25,6 +25,15 @@ class Controller(var matrix: Option[MatrixInterface])
     }
   }
 
+  def getSize(): Int = {
+    matrix match {
+      case Some(m) => {
+        m.getCells()
+      }
+      case None => -1
+    }
+  }
+
   def getPrintData(): String = {
     val m = getMatrix()
     m match {
@@ -53,6 +62,13 @@ class Controller(var matrix: Option[MatrixInterface])
   def currentPlayer(): String = {
     matrix match {
       case Some(m) => m.getPlayer()
+      case None    => "NoPlayer"
+    }
+  }
+
+  def getName(): String = {
+    matrix match {
+      case Some(m) => m.getName_()
       case None    => "NoPlayer"
     }
   }

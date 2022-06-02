@@ -13,24 +13,39 @@ import java.awt.Color
 import java.awt.Image
 import scala.swing.Swing.Embossing
 import javax.swing.border.BevelBorder
+import javax.swing.border.TitledBorder
+import javax.swing.border.LineBorder
+import scalafx.scene.shape.Circle
+import javafx.scene.layout.Border
 
-class SwingGui(controller: ControllerInterface) extends Frame with Reactor:
-  // listenTo(controller)
+class SwingGui(controller: ControllerInterface) extends Frame with Observer:
+  controller.add(this)
+  listenTo(controller)
 
   peer.setDefaultCloseOperation(EXIT_ON_CLOSE)
+  preferredSize = new Dimension(800, 600)
+  var imageIcon = new ImageIcon("icon.jpg")
   title = "HTWG-DAME"
-  // val icon = ImageIO.read(new File(f"icon.png"))
 
-  reactions += { case e =>
-  // this.close()
-  // new BeveledBorder(BevelBorder.RAISED, Color.orange, Color.DARK_GRAY)
+  contents = new BorderPanel {
+    if (controller.getMatrix().isDefined) {
+      val cells = controller.getSize()
+      add(new drawBoard(cells), BorderPanel.Position.Center)
+      add(commandArea, BorderPanel.Position.South)
+      add(turn, BorderPanel.Position.North)
+      add(box, BorderPanel.Position.North)
+    } else {
+      add(box, BorderPanel.Position.North)
+    }
+
   }
+
   menuBar = new MenuBar {
-    background = java.awt.Color.DARK_GRAY
-    border = BevelBorder(10, Color.orange, Color.DARK_GRAY)
+    background = java.awt.Color.WHITE
+    border = BevelBorder(10, Color.ORANGE, Color.WHITE)
     contents += new Menu("Game") {
       contents += new MenuItem(Action("New") {
-        // controller....
+        newGame()
       })
       contents += new MenuItem(Action("Save") {
         // controller ...
@@ -41,56 +56,170 @@ class SwingGui(controller: ControllerInterface) extends Frame with Reactor:
       val items = List(contents)
     }
 
-    contents += new Menu("Redo") {
-      contents += new MenuItem(Action("Redo Step") {
-        // controller ...
+    contents += new Menu("Undo") {
+      contents += new MenuItem(Action("Undo Step") {
+        controller.undo
       })
 
-      contents += new MenuItem(Action("Undo Step") {
-        // ...
+      contents += new MenuItem(Action("Redo Step") {
+        controller.redo
       })
     }
 
-    contents += new MenuItem(Action("Quit") { /* cotroller.exit() */ })
+    contents += new MenuItem(Action("Quit") {
+      background = java.awt.Color.WHITE
+      closeWindow()
+    })
 
     contents += new BorderPanel {
       add(new Label("Welcome to Dame"), BorderPanel.Position.North)
-      // border = Swing.EmptyBorder(0, 0, 600, 600)
+      background = java.awt.Color.WHITE
     }
-    contents += mainMenu
+
+  } // menuBar
+
+  def box = new FlowPanel {
+
+    val x = new Button(Action("International") {
+      new TitledBorder(
+        new TitledBorder(LineBorder.createGrayLineBorder(), "New"),
+        "Game",
+        TitledBorder.RIGHT,
+        TitledBorder.BOTTOM
+      )
+      background = java.awt.Color.WHITE
+      newGame("international")
+      // controller....
+    })
+    contents += x
+
+    contents += new Button(Action("Classic") {
+      new TitledBorder(
+        new TitledBorder(LineBorder.createGrayLineBorder(), "New"),
+        "Game",
+        TitledBorder.RIGHT,
+        TitledBorder.BOTTOM
+      )
+      centerOnScreen()
+      background = java.awt.Color.WHITE
+      newGame("standard")
+
+    })
   }
+
+  def newGame(typ: String = "dev"): Unit = {
+
+    val p1 = Dialog.showInput(contents.head, "Player1", initial = "Name")
+    val p2 = Dialog.showInput(contents.head, "Player2", initial = "Name")
+
+    typ match {
+      case "international" => {
+        controller.startGame("international", p1.toString, p2.toString)
+        update
+      }
+      case "standard" => {
+        controller.startGame("standard", p1.toString, p2.toString)
+        update
+      }
+    }
+  }
+
+  class drawBoard(size: Int) extends GridPanel(size + 1, size + 1):
+    val matrix = controller.getMatrix() match {
+      case Some(s) => s
+      case None    =>
+    }
+
+    val data: List[List[Int]] = controller.getMatrix() match {
+      case Some(s) => s.getData()
+      case None    => List(Nil)
+    }
+
+    for (i <- 0 to size - 1) {
+      for (j <- 0 to size - 1) {
+        data(i)(j) match {
+
+          case 0 =>
+            contents += new Button() {
+              val b = if ((i + j) % 2 == 0) Color.BLACK else Color.WHITE
+              background = b
+            }
+
+          case 1 =>
+            contents += new Button("X") {
+              val b = if ((i + j) % 2 == 0) Color.BLACK else Color.WHITE
+              background = b
+            }
+
+          case 2 =>
+            contents += new Button("O") {
+              val b = if ((i + j) % 2 == 0) Color.BLACK else Color.WHITE
+              background = b
+            }
+        }
+
+      }
+    }
+
   pack()
   visible = true
   centerOnScreen()
   open()
 
-  def mainMenu: BoxPanel = new BoxPanel(Orientation.Vertical):
-    val boxpanel = new BoxPanel(Orientation.Horizontal):
-      // val image = new File(f"src/main/scala/de/htwg/se/dame/aview/dame.png")
-      val title = new Button("")
-      // title.icon = ImageIcon(ImageIO.read(image))
-      title.selected = false
-      title.contentAreaFilled = false
-      title.borderPainted = false
-      title.focusPainted = false
-      title.opaque = false
-      contents += title
-      // border = Swing.EmptyBorder(0, 0, 600, 600)
+  def turn = new GridPanel(2, 1) {
+    contents += new Label(
+      "It's " + controller.getName() + "'s turn"
+    )
+  }
 
-    val boxpanelButtons = new BoxPanel(Orientation.Horizontal):
-      val international = new Button("International")
-      val classic = new Button("Classic")
+  def commandArea = new GridPanel(1, 1) {
+    contents += new TextArea("enter a command") {
+      preferredSize = new Dimension(40, 40)
 
-      contents += international
-      contents += classic
-
-      listenTo(international)
-      listenTo(classic)
-
-      reactions += {
-        case ButtonClicked(`international`) => // controller ...
-        case ButtonClicked(`classic`)       => // controller
+      val send = new Button("send command") {
+        background = Color.GREEN
       }
-    background = Color.BLUE
-    contents += boxpanel
-    contents += boxpanelButtons
+      contents += send
+      listenTo(send)
+
+      reactions += { case ButtonClicked(send) =>
+        command(text)
+      }
+    }
+
+  }
+
+  def command(com: String) = {
+    val c = com.split(" ")
+    val op = c(0)
+    val dir = c(1)
+    val row = c(2)
+    val col = c(3)
+    controller.play(dir, row.toInt, col.toInt)
+    update
+  }
+
+  def closeWindow() = {
+    val response = Dialog.showConfirmation(
+      contents.head,
+      "you wish to quit the game ?",
+      optionType = Dialog.Options.YesNo,
+      title = title
+    )
+
+    if (response == Dialog.Result.Ok)
+      sys.exit(0)
+  }
+
+  override def update: Unit = {
+    contents = new BorderPanel {
+      if (controller.getMatrix().isDefined) {
+        val cells = controller.getSize()
+        add(new drawBoard(cells), BorderPanel.Position.Center)
+        add(commandArea, BorderPanel.Position.South)
+        add(turn, BorderPanel.Position.North)
+      } else {
+        add(box, BorderPanel.Position.North)
+      }
+    }
+  }

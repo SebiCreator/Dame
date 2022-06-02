@@ -9,6 +9,10 @@ trait ControllerInterface extends Publisher with Observable {
 
   def getMatrix(): Option[MatrixInterface]
 
+  def getSize(): Int
+
+  def getName(): String
+
   def getPrintData(): String
 
   def niceGame(): Unit
