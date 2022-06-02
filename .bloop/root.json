@@ -2,13 +2,13 @@
     "version": "1.4.0",
     "project": {
         "name": "root",
-        "directory": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype",
-        "workspaceDir": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype",
+        "directory": "C:\\Users\\Daniel\\Desktop\\Dame",
+        "workspaceDir": "C:\\Users\\Daniel\\Desktop\\Dame",
         "sources": [
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\main\\scala",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\main\\scala-3",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\main\\java",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\target\\scala-3.1.1\\src_managed\\main"
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\main\\scala",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\main\\scala-3",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\main\\java",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\target\\scala-3.1.1\\src_managed\\main"
         ],
         "dependencies": [
             
@@ -31,11 +31,11 @@
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\16\\javafx-base-16.jar",
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\16\\javafx-media-16.jar"
         ],
-        "out": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\.bloop\\root",
-        "classesDir": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\.bloop\\root\\scala-3\\classes",
+        "out": "C:\\Users\\Daniel\\Desktop\\Dame\\.bloop\\root",
+        "classesDir": "C:\\Users\\Daniel\\Desktop\\Dame\\.bloop\\root\\scala-3\\classes",
         "resources": [
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\main\\resources",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\target\\scala-3.1.1\\resource_managed\\main"
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\main\\resources",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\target\\scala-3.1.1\\resource_managed\\main"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -151,7 +151,7 @@
             "config": {
                 "home": "C:\\jdk-14.0.1",
                 "options": [
-                    "-Duser.dir=C:\\Users\\Daniel\\Desktop\\Dame-Prototype"
+                    "-Duser.dir=C:\\Users\\Daniel\\Desktop\\Dame"
                 ]
             },
             "mainClass": [

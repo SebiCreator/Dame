@@ -4,6 +4,7 @@ import de.htwg.se.dame.aview.Tui
 import de.htwg.se.dame.controllerComponent._
 import de.htwg.se.dame.controllerComponent.controllerBaseImpl.Controller
 import de.htwg.se.dame.model.gameComponent.gameBaseImpl.*
+import de.htwg.se.dame.model.playerComponent.playerBaseImpl._
 
 import scala.io.StdIn.readLine
 
@@ -24,11 +25,16 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
    */
 
   // val a = tui.processInputLine()
-
+  /*
   val con = new Controller(None)
   val gui = new SwingGui(con)
   val tui = Tui(con)
   val a = tui.processInputLine()
-  // gui.mainMenu
+   */
+
+  val matrix = new Matrix()
+  matrix.initFill()
+
+  print(matrix)
 
 }

@@ -2,19 +2,19 @@
     "version": "1.4.0",
     "project": {
         "name": "root-test",
-        "directory": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype",
-        "workspaceDir": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype",
+        "directory": "C:\\Users\\Daniel\\Desktop\\Dame",
+        "workspaceDir": "C:\\Users\\Daniel\\Desktop\\Dame",
         "sources": [
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\test\\scala",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\test\\scala-3",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\test\\java",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\target\\scala-3.1.1\\src_managed\\test"
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\test\\scala",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\test\\scala-3",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\test\\java",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\target\\scala-3.1.1\\src_managed\\test"
         ],
         "dependencies": [
             "root"
         ],
         "classpath": [
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\.bloop\\root\\scala-3\\classes",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\.bloop\\root\\scala-3\\classes",
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.1.1\\scala3-library_3-3.1.1.jar",
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-swing_3\\3.0.0\\scala-swing_3-3.0.0.jar",
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scalactic\\scalactic_3\\3.2.11\\scalactic_3-3.2.11.jar",
@@ -48,11 +48,11 @@
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scalatest\\scalatest-compatible\\3.2.11\\scalatest-compatible-3.2.11.jar",
             "C:\\Users\\Daniel\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-xml_3\\2.0.1\\scala-xml_3-2.0.1.jar"
         ],
-        "out": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\.bloop\\root",
-        "classesDir": "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\.bloop\\root\\scala-3\\test-classes",
+        "out": "C:\\Users\\Daniel\\Desktop\\Dame\\.bloop\\root",
+        "classesDir": "C:\\Users\\Daniel\\Desktop\\Dame\\.bloop\\root\\scala-3\\test-classes",
         "resources": [
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\src\\test\\resources",
-            "C:\\Users\\Daniel\\Desktop\\Dame-Prototype\\target\\scala-3.1.1\\resource_managed\\test"
+            "C:\\Users\\Daniel\\Desktop\\Dame\\src\\test\\resources",
+            "C:\\Users\\Daniel\\Desktop\\Dame\\target\\scala-3.1.1\\resource_managed\\test"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -168,7 +168,7 @@
             "config": {
                 "home": "C:\\jdk-14.0.1",
                 "options": [
-                    "-Duser.dir=C:\\Users\\Daniel\\Desktop\\Dame-Prototype"
+                    "-Duser.dir=C:\\Users\\Daniel\\Desktop\\Dame"
                 ]
             },
             "mainClass": [

@@ -1,13 +1,12 @@
-package de.htwg.se.dame.Controller
+package de.htwg.se.dame.controllerComponent.controllerBaseImpl
 
-import org.scalatest.matchers.should.Matchers._
+import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
-import de.htwg.se.dame.controller.Controller
-import de.htwg.se.dame.model.Matrix
+
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Matrix
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Lines.modBoardWrapped
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Board
 import de.htwg.se.dame.util.Observer
-import de.htwg.se.dame.model.Board
-import de.htwg.se.dame.model.*
-import org.scalatest.matchers.must.Matchers
 
 class ControllerSpec extends AnyWordSpec with Matchers {
   "The Controller" should {
@@ -23,7 +22,7 @@ class ControllerSpec extends AnyWordSpec with Matchers {
 
     "print the matrix" in {
       testController.getPrintData() should be(
-        modBoardWrapped(1, matrix.cells / 2, matrix.tup())
+        modBoardWrapped(1, matrix.getCells() / 2, matrix.tup())
       )
     }
     "get the current player" in {

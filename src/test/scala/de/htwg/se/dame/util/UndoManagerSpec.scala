@@ -1,5 +1,6 @@
 package de.htwg.se.dame.util
-import de.htwg.se.dame.model.{Board, Matrix}
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Board
+import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Matrix
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
 
