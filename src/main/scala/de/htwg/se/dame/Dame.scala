@@ -15,26 +15,8 @@ import de.htwg.se.dame.aview.FXGui
 import de.htwg.se.dame.model.gameComponent.MatrixInterface
 
 @main def hello: Unit = {
-
-  /*
-  val matrix = new Matrix().initFill()
-  val controller = new Controller(Some(matrix))
-  val FX = new FXGui(controller)
-  controller.add(FX)
-  FX.start()
-   */
-
-  // val a = tui.processInputLine()
-  /*
   val con = new Controller(None)
   val gui = new SwingGui(con)
   val tui = Tui(con)
   val a = tui.processInputLine()
-   */
-
-  val matrix = new Matrix()
-  matrix.initFill()
-
-  print(matrix)
-
 }
