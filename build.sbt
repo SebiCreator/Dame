@@ -6,6 +6,8 @@ lazy val root = project
     name := "Dame",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := scala3Version,
+    libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "2.0.1",
+    libraryDependencies += ("com.typesafe.play" %% "play-json" % "2.10.0-RC5"),
     libraryDependencies += "com.google.inject" % "guice" % "4.2.3",
     libraryDependencies += ("net.codingwell" %% "scala-guice" % "5.0.2").cross(CrossVersion.for3Use2_13),
 
