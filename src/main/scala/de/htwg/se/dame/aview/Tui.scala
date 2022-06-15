@@ -66,8 +66,10 @@ class Tui(var controller: ControllerInterface) extends Observer {
         controller.startGame(version)
       case "load" =>
         println("Loading last save ...")
+        controller.load
       case "save" =>
         println("Current game has been saved ...")
+        controller.save
       case "help" =>
         helpMessage()
       case "move" =>

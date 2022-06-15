@@ -48,10 +48,10 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
         newGame()
       })
       contents += new MenuItem(Action("Save") {
-        // controller ...
+        controller.save
       })
       contents += new MenuItem(Action("Load") {
-        // controller ...
+        controller.load
       })
       val items = List(contents)
     }
@@ -81,7 +81,7 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
   def box = new FlowPanel {
 
     val x = new Button(Action("International") {
-      new TitledBorder(
+      border = new TitledBorder(
         new TitledBorder(LineBorder.createGrayLineBorder(), "New"),
         "Game",
         TitledBorder.RIGHT,
@@ -172,8 +172,15 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
     )
   }
 
-  def commandArea = new GridPanel(1, 1) {
-    contents += new TextArea("enter a command") {
+  def infoArea = new GridPanel(1, 1) {}
+
+  def commandArea = new GridPanel(2, 1) {
+    contents += new Label {
+      text = "enter your command"
+      font = new Font("Calibri", java.awt.Font.PLAIN, 20)
+    }
+    contents += new TextArea() {
+
       preferredSize = new Dimension(40, 40)
 
       val send = new Button("send command") {
@@ -185,6 +192,12 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
       reactions += { case ButtonClicked(send) =>
         command(text)
       }
+
+    }
+    contents += new Label {
+      text =
+        "the format is: <operation> <direction> <row> <col>; e.g 'move left 3 1'"
+      font = new Font("Calibri", java.awt.Font.PLAIN, 12)
     }
 
   }

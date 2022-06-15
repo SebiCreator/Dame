@@ -16,25 +16,31 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
 
 @main def hello: Unit = {
 
-  /*
   val matrix = new Matrix().initFill()
   val controller = new Controller(Some(matrix))
+  /*
   val FX = new FXGui(controller)
   controller.add(FX)
-  FX.start()
+  val thread = new Thread {
+    override def run: Unit = {
+      FX.main(Array[String]())
+    }
+  }
    */
 
+  // platform.run.later
+
   // val a = tui.processInputLine()
-  /*
+
   val con = new Controller(None)
   val gui = new SwingGui(con)
   val tui = Tui(con)
   val a = tui.processInputLine()
-   */
 
+  /*
   val matrix = new Matrix()
   matrix.initFill()
 
   print(matrix)
-
+   */
 }
