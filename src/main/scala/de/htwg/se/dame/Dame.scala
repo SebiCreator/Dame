@@ -34,6 +34,7 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
   // val a = tui.processInputLine()
 
  val injector = Guice.createInjector(new DameModule) 
+
  val con = injector.getInstance(classOf[ControllerInterface])
  //val con = new Controller(None)
  val gui = new SwingGui(con)

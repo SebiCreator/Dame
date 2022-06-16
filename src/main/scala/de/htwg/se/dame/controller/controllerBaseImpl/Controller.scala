@@ -99,7 +99,6 @@ class Controller @Inject() (var matrix: Option[MatrixInterface])
       name2: String = "B"
   ): Unit = {
     matrix = Some(Board(boardname, name1, name2))
-    println(matrix)
     notifyObservers
 
   }

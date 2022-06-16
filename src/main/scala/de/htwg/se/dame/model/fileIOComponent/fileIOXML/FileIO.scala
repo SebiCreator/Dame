@@ -37,10 +37,6 @@ class FileIO extends FileIOInterface:
 
     val m = Matrix(extract, cells, p1, p2)
     val name = m.getName_()
-    println(player1)
-    println(player2)
-    println(turn)
-    println(name)
 
     if(turn == name) {
       return m

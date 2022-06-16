@@ -146,7 +146,14 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
       case None    => List(Nil)
     }
 
-    for (i <- 0 to size - 1) {
+    for (i <- 0 to size -1){
+      contents += new Button(i.toString){
+        background = Color.RED
+      }
+    }
+
+    
+    for (i <- 0 to size -1) {
       for (j <- 0 to size - 1) {
         data(i)(j) match {
 
@@ -168,7 +175,6 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
               background = b
             }
         }
-
       }
     }
 
