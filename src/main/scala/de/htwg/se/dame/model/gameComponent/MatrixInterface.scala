@@ -8,6 +8,8 @@ trait MatrixInterface {
 
   def getName_(): String
 
+  def getplayerNames(i: Int):String
+
   def initFill1(n: Int): List[Int]
 
   def initFill2(n: Int): List[Int]
@@ -23,6 +25,7 @@ trait MatrixInterface {
   def cellIsEmpty(row: Int, col: Int): Boolean
 
   def whichFigure(row: Int)(col: Int): String
+
 
   def move(direction: String, row: Int, col: Int): MatrixInterface
 
@@ -68,5 +71,6 @@ trait MatrixInterface {
   def killRightL(row: Int, col: Int): MatrixInterface
 
   def killLeftL(row: Int, col: Int): MatrixInterface
+
 
 }

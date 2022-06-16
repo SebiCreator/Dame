@@ -12,9 +12,9 @@ class MatrixSpec extends AnyWordSpec with Matchers {
     "A Matrix is a tailored Data Structure to capture Board coordinate it"
   ) in {
     val default = new Matrix()
-    default.player1 should be(Player1())
+    default.player1 should be(Player1("A"))
     default.player1.toString should be("Player1(A)")
-    default.player2 should be(Player2())
+    default.player2 should be(Player2("B"))
     default.player2.toString should be("Player2(B)")
     val test = new Matrix()
     test.cells should be(6)

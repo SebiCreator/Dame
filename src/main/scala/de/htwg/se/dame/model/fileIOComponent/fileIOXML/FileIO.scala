@@ -41,18 +41,15 @@ class FileIO extends FileIOInterface:
 
   def matrixToXML(matrix: MatrixInterface) = {
     <matrix>
-    /*
-        <turn turn={matrix.getPlayer()}> </turn>
-
+        <turn turn={matrix.getName_()}> </turn>
         <player1>
-        {}
+        {matrix.getplayerNames(1)}
         </player1>
-
         <player2>
-        {}
+        {matrix.getplayerNames(2)}
         </player2>
-    */
-        <board board={matrix.getData().toString}> </board>
+        <board> {matrix.getData().flatMap(x => x)} </board>
+        <cells>{matrix.getCells()}</cells>
 
     </matrix>
   }

@@ -112,13 +112,24 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
     val p1 = Dialog.showInput(contents.head, "Player1", initial = "Name")
     val p2 = Dialog.showInput(contents.head, "Player2", initial = "Name")
 
+    val player1 = p1 match {
+      case Some(s) => if (s == "") "Player1" else s
+      case None => "Player1"
+    }
+
+    val player2 = p2 match {
+      case Some(s) => if (s == "") "Player2" else s
+      case None => "Player2"
+    }
+
+
     typ match {
       case "international" => {
-        controller.startGame("international", p1.toString, p2.toString)
+        controller.startGame("international", player1, player2)
         update
       }
       case "standard" => {
-        controller.startGame("standard", p1.toString, p2.toString)
+        controller.startGame("standard", player1, player2)
         update
       }
     }
@@ -168,7 +179,7 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
 
   def turn = new GridPanel(2, 1) {
     contents += new Label(
-      "It's " + controller.getName() + "'s turn"
+      "It's " + controller.getName()+  "'s turn"
     )
   }
 

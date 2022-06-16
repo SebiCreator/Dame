@@ -24,8 +24,8 @@ case class Matrix(
 
   def getName_(): String = {
     player match {
-      case 1 => player1.toString
-      case 2 => player2.toString
+      case 1 => player1.get_name()
+      case 2 => player2.get_name()
     }
   }
 
@@ -57,10 +57,7 @@ case class Matrix(
     val res3 = res1.flatMap(_.toList).toList
     val res4 = res2.flatMap(_.toList).toList
 
-    Matrix(res3 ++ e ++ res4)
-
-    // val res2 = (res.flatMap(_.toList) grouped cells).flatMap(_.toList).toList
-    // Matrix(res2.updated(it,e).updated(it+1,e))
+    Matrix(res3 ++ e ++ res4,this.cells,this.player1,this.player2)
   }
 
   def numToPlayer(num: Int): String = {
@@ -109,6 +106,13 @@ case class Matrix(
     player match {
       case 1 => Matrix(data, cells, player1, player2, 2)
       case 2 => Matrix(data, cells, player1, player2, 1)
+    }
+  }
+
+  def getplayerNames(i: Int) = {
+    i match{
+      case 1 => player1.get_name()
+      case 2 => player2.get_name()
     }
   }
 
@@ -174,7 +178,7 @@ case class Matrix(
     val dcol = col - 1
     val drow = row - 1
     if (!leftMovePossibleL(row, col) || !cellIsEmpty(drow, dcol))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym)
       .replaceCell(row, col, 0)
@@ -186,7 +190,7 @@ case class Matrix(
     val dcol = col + 1
     val drow = row + 1
     if (!leftMovePossibleU(row, col) || !cellIsEmpty(drow, dcol))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym)
       .replaceCell(row, col, 0)
@@ -198,7 +202,7 @@ case class Matrix(
     val dcol = col + 1
     val drow = row - 1
     if (!rightMovePossibleL(row, col) || !cellIsEmpty(drow, dcol))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym)
       .replaceCell(row, col, 0)
@@ -210,7 +214,7 @@ case class Matrix(
     val dcol = col - 1
     val drow = row + 1
     if (!rightMovePossibleU(row, col) || !cellIsEmpty(drow, dcol))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(drow, dcol, sym)
       .replaceCell(row, col, 0)
@@ -252,7 +256,7 @@ case class Matrix(
 
   def killRightU(row: Int, col: Int): MatrixInterface = {
     if (!rightKillPossibleU(row, col) || cellIsEmpty(row, col))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(row, col, 0)
       .replaceCell(row + 1, col - 1, 0)
@@ -262,7 +266,7 @@ case class Matrix(
 
   def killLeftU(row: Int, col: Int): MatrixInterface = {
     if (!leftKillPossilbeU(row, col) || cellIsEmpty(row, col))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(row, col, 0)
       .replaceCell(row + 1, col + 1, 0)
@@ -272,7 +276,7 @@ case class Matrix(
 
   def killRightL(row: Int, col: Int): MatrixInterface = {
     if (!rightKillPossibleL(row, col) || cellIsEmpty(row, col))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(row, col, 0)
       .replaceCell(row - 1, col + 1, 0)
@@ -282,7 +286,7 @@ case class Matrix(
 
   def killLeftL(row: Int, col: Int): MatrixInterface = {
     if (!leftKillPossilbeL(row, col) || cellIsEmpty(row, col))
-      return Matrix(this.data)
+      return Matrix(this.data,this.cells,this.player1,this.player2)
     val sym = data(row)(col)
     replaceCell(row, col, 0)
       .replaceCell(row - 1, col - 1, 0)

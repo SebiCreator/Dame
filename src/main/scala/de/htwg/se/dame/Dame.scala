@@ -32,15 +32,10 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
 
   // val a = tui.processInputLine()
 
-  val con = new Controller(None)
-  val gui = new SwingGui(con)
-  val tui = Tui(con)
-  val a = tui.processInputLine()
+  
+ val con = new Controller(None)
+ val gui = new SwingGui(con)
+ val tui = Tui(con)
+ val a = tui.processInputLine()
 
-  /*
-  val matrix = new Matrix()
-  matrix.initFill()
-
-  print(matrix)
-   */
 }
