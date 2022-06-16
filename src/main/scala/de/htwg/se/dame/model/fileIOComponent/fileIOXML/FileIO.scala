@@ -21,14 +21,32 @@ import scala.xml.{NodeSeq, PrettyPrinter}
 class FileIO extends FileIOInterface:
   override def load: MatrixInterface = {
     val file = scala.xml.XML.loadFile("game.xml")
-    val player1 = (file \\ "game" \ "player1")
-    val player2 = (file \\ "game" \ "player2")
+    val player1 = (file \\ "player1").text.toString.trim()
+    val player2 = (file \\ "player2").text.toString.trim()
+    val turn = (file \\ "turn" ).text.toString.trim()
+    val data = (file \\ "board").text.replaceAll(" ","").replaceAll("\n","").toList
+    val cells = (file \\ "cells").text.toInt
 
-    val p1 = Player1(player1.toString())
-    val p2 = Player2(player1.toString())
+    val data1 = data.map(_.asDigit)
 
-    val test = Matrix().initFill()
-    Matrix(test.getData(), test.getCells(), p1, p2)
+    val extract = (data1 grouped cells).toList
+
+    val p1 = Player1(player1)
+    val p2 = Player2(player2)
+
+
+    val m = Matrix(extract, cells, p1, p2)
+    val name = m.getName_()
+    println(player1)
+    println(player2)
+    println(turn)
+    println(name)
+
+    if(turn == name) {
+      return m
+    } else {
+      return m.changePlayer()
+    }
   }
 
   override def save(matrix: MatrixInterface): Unit = {
@@ -41,15 +59,14 @@ class FileIO extends FileIOInterface:
 
   def matrixToXML(matrix: MatrixInterface) = {
     <matrix>
-        <turn turn={matrix.getName_()}> </turn>
+        <turn>{matrix.getName_()} </turn>
         <player1>
         {matrix.getplayerNames(1)}
         </player1>
         <player2>
         {matrix.getplayerNames(2)}
         </player2>
-        <board> {matrix.getData().flatMap(x => x)} </board>
+        <board>{matrix.getData()}</board>
         <cells>{matrix.getCells()}</cells>
-
     </matrix>
   }

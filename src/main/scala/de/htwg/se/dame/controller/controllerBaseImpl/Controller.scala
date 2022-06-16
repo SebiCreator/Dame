@@ -25,8 +25,8 @@ class Controller @Inject() (var matrix: Option[MatrixInterface])
 
   val undoManager: UndoManager = new UndoManager()
 
-  // val injector = Guice.createInjector(new DameModule)
-  // val fileIo = injector.instance[FileIOInterface]
+  //val injector = Guice.createInjector(new DameModule)
+  //val fileIo = injector.instance[FileIOInterface]
 
   def getMatrix(): Option[MatrixInterface] = {
     matrix match {

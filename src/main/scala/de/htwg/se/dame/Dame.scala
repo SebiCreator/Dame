@@ -7,6 +7,7 @@ import de.htwg.se.dame.model.gameComponent.gameBaseImpl.*
 import de.htwg.se.dame.model.playerComponent.playerBaseImpl._
 
 import scala.io.StdIn.readLine
+import com.google.inject.Guice
 
 import scala.swing._
 import scala.swing.event._
@@ -32,8 +33,9 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
 
   // val a = tui.processInputLine()
 
-  
- val con = new Controller(None)
+ val injector = Guice.createInjector(new DameModule) 
+ val con = injector.getInstance(classOf[ControllerInterface])
+ //val con = new Controller(None)
  val gui = new SwingGui(con)
  val tui = Tui(con)
  val a = tui.processInputLine()
