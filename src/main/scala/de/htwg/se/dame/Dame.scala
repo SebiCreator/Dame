@@ -31,14 +31,13 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
 
   // platform.run.later
 
-  // val a = tui.processInputLine()
 
  val injector = Guice.createInjector(new DameModule) 
-
  val con = injector.getInstance(classOf[ControllerInterface])
  //val con = new Controller(None)
  val gui = new SwingGui(con)
  val tui = Tui(con)
  val a = tui.processInputLine()
+
 
 }

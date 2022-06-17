@@ -129,7 +129,7 @@ class SwingGui(controller: ControllerInterface) extends Frame with Observer:
         update
       }
       case "standard" => {
-        controller.startGame("standard", player1, player2)
+        controller.startGame("international", player1, player2)
         update
       }
     }
