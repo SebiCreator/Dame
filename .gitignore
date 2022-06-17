@@ -4,3 +4,5 @@
 .bsp
 .metals/
 **.vscode/**
+*.xml
+*.json
