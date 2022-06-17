@@ -34,5 +34,7 @@ trait ControllerInterface extends Publisher with Observable {
   def undo: Unit
 
   def redo: Unit
+  def save: Unit
+  def load: Unit
 
 }

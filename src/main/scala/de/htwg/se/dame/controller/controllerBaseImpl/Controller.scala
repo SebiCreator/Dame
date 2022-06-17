@@ -1,10 +1,17 @@
 package de.htwg.se.dame.controllerComponent.controllerBaseImpl
 
+import com.google.inject.name.Names
+import com.google.inject.Guice
+import com.google.inject.Inject
+import net.codingwell.scalaguice.InjectorExtensions._
+
+import de.htwg.se.dame.DameModule
 import de.htwg.se.dame.util.UndoManager
 import de.htwg.se.dame.controllerComponent._
 import de.htwg.se.dame.model.gameComponent.MatrixInterface
 import de.htwg.se.dame.model.gameComponent.gameBaseImpl.*
 import de.htwg.se.dame.model.gameComponent.gameBaseImpl.Matrix
+import de.htwg.se.dame.model.fileIOComponent.FileIOInterface
 
 import de.htwg.se.dame.util.*
 
@@ -13,10 +20,13 @@ import scala.util.{Try, Success, Failure}
 import scala.swing.Publisher
 import de.htwg.se.dame.util.Observer
 
-class Controller(var matrix: Option[MatrixInterface])
+class Controller @Inject() (var matrix: Option[MatrixInterface])
     extends ControllerInterface {
 
   val undoManager: UndoManager = new UndoManager()
+
+  //val injector = Guice.createInjector(new DameModule)
+  //val fileIo = injector.instance[FileIOInterface]
 
   def getMatrix(): Option[MatrixInterface] = {
     matrix match {
@@ -109,6 +119,26 @@ class Controller(var matrix: Option[MatrixInterface])
     if (redo.isDefined) matrix = redo
     notifyObservers
 
+  }
+
+  def save: Unit = {
+    matrix match
+      case Some(m) =>
+        Guice
+          .createInjector(new DameModule)
+          .getInstance(classOf[FileIOInterface])
+          .save(m)
+      case None => return
+  }
+
+  def load: Unit = {
+    matrix = Some(
+      Guice
+        .createInjector(new DameModule)
+        .getInstance(classOf[FileIOInterface])
+        .load
+    )
+    notifyObservers
   }
 
 }
