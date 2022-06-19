@@ -29,6 +29,8 @@ trait MatrixInterface {
 
   def move(direction: String, row: Int, col: Int): MatrixInterface
 
+  def moveC(srow: Int,scol: Int,trow : Int,tcol: Int): MatrixInterface 
+
   def changePlayer(): MatrixInterface
 
   def checkDameU(): MatrixInterface

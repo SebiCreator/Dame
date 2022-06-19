@@ -99,7 +99,43 @@ case class Matrix(
       case "farmer" => Farmer_Figure(this, direction, getPlayer(), row, col)
       case "dame"   => Dame_Figure(this, direction, getPlayer(), row, col)
     }
+  }
 
+  def moveC(srow: Int,scol: Int,trow : Int,tcol: Int): MatrixInterface = {
+    val rowDiff = trow - srow
+    val colDiff = tcol - scol
+    player match {
+      case 1 => {
+        if (rowDiff == 1 && colDiff == -1){
+          this.move("right",srow,scol)
+        }
+        else if(rowDiff == 1 && colDiff == 1){
+          this.move("left",srow,scol)
+        }
+        else {
+          this
+        }
+      }
+
+
+
+
+      case 2 =>  {
+        if(rowDiff == -1 && colDiff == 1){
+          this.move("right",srow,scol)
+        }
+        else if (rowDiff == -1 && colDiff == -1){
+          this.move("left",srow,scol)
+        }
+        else {
+          this
+        }
+      }
+
+
+
+      case _ => return this
+    }
   }
 
   def changePlayer() = {
@@ -293,5 +329,6 @@ case class Matrix(
       .replaceCell(row - 2, col - 2, sym)
       .changePlayer()
   }
+
 
 }

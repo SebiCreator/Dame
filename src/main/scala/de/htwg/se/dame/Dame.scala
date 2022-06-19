@@ -32,13 +32,24 @@ import de.htwg.se.dame.model.gameComponent.MatrixInterface
   // platform.run.later
 
   // val a = tui.processInputLine()
-
- val injector = Guice.createInjector(new DameModule) 
-
+  /*
+ val injector = Guice.createInjector(new DameModule)
  val con = injector.getInstance(classOf[ControllerInterface])
- //val con = new Controller(None)
  val gui = new SwingGui(con)
  val tui = Tui(con)
  val a = tui.processInputLine()
+   */
+
+  val m = Board("dev", "A", "B")
+  println(m.getData().foreach(println))
+  val m2 = m.moveC(1,2,2,3)
+//  val m2 = m.move("right",1,2)
+  val m3 = m2.moveC(4,1,3,2)
+  println(m)
+  println(m2.getData().foreach(println))
+  println(m2)
+  println(m3.getData().foreach(println))
+  println(m3)
+
 
 }
